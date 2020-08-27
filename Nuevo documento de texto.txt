@@ -1,5 +1,1 @@
-int range puertos
-sw mo acc
-sw acc vl no
-You7:55 PM
-wr
+
