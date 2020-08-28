@@ -12,6 +12,8 @@ import { InicioComponent } from './inicio/inicio.component';
 import { EmpresasComponent } from './empresas/empresas.component';
 import { InfoComponent } from './info/info.component';
 import { GeneralComponent } from './general/general.component';
+import { LoginComponent } from './login/login.component';
+import { SigninComponent } from './signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { GeneralComponent } from './general/general.component';
     InicioComponent,
     EmpresasComponent,
     InfoComponent,
-    GeneralComponent
+    GeneralComponent,
+    LoginComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +35,7 @@ import { GeneralComponent } from './general/general.component';
     MatCardModule,
     MatDialogModule
   ],
+  entryComponents: [LoginComponent,SigninComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

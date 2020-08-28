@@ -8,6 +8,8 @@
     </button>
     <a mat-button routerLink="info">Info</a>
     <a mat-button routerLink="empresas">Empresas</a>
-    <a mat-raised-button color="primary">Log in</a>
-    <a mat-raised-button>Sign in</a>
+    <div>
+        <button mat-stroked-button (click)="openDialog()" color="primary">Log in</button>
+        <button mat-stroked-button (click)="openDialogsigin()" color="warn">Sign in</button>
+    </div>
 </mat-toolbar>
