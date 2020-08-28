@@ -1,5 +1,8 @@
+.format-info{
+    background: rgb(233, 232, 232);
+    max-width: 700px;
+}
 .format-nombres{
-    background: orange;  
+    background: rgb(233, 232, 232);  
     max-width: 300px;
-    
 }
