@@ -11,13 +11,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InicioComponent } from './inicio/inicio.component';
 import { EmpresasComponent } from './empresas/empresas.component';
 import { InfoComponent } from './info/info.component';
+import { GeneralComponent } from './general/general.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
     EmpresasComponent,
-    InfoComponent
+    InfoComponent,
+    GeneralComponent
   ],
   imports: [
     BrowserModule,
