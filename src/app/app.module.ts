@@ -9,7 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InicioComponent } from './inicio/inicio.component';
-import { EmpresasComponent } from './empresas/empresas.component';
 import { InfoComponent } from './info/info.component';
 import { GeneralComponent } from './general/general.component';
 import { LoginComponent } from './login/login.component';
@@ -19,7 +18,6 @@ import { SigninComponent } from './signin/signin.component';
   declarations: [
     AppComponent,
     InicioComponent,
-    EmpresasComponent,
     InfoComponent,
     GeneralComponent,
     LoginComponent,
