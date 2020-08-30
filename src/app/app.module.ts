@@ -13,6 +13,7 @@ import { InfoComponent } from './info/info.component';
 import { GeneralComponent } from './general/general.component';
 import { LoginComponent } from './login/login.component';
 import { SigninComponent } from './signin/signin.component';
+import { EmpresasComponent } from './empresas/empresas.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SigninComponent } from './signin/signin.component';
     InfoComponent,
     GeneralComponent,
     LoginComponent,
-    SigninComponent
+    SigninComponent,
+    EmpresasComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,7 @@ import { SigninComponent } from './signin/signin.component';
     MatCardModule,
     MatDialogModule
   ],
-  entryComponents: [LoginComponent,SigninComponent],
+  entryComponents: [LoginComponent,SigninComponent,EmpresasComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
