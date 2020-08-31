@@ -11,12 +11,14 @@ import { SigninComponent } from '../signin/signin.component';
 export class GeneralComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
+  show: boolean = true;
+  home: boolean = false;
 
-  openDialog(){
+  openDialog() {
     this.dialog.open(LoginComponent);
   }
 
-  openDialogsigin(){
+  openDialogsigin() {
     this.dialog.open(SigninComponent);
   }
 
