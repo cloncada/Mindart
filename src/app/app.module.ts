@@ -14,6 +14,8 @@ import { GeneralComponent } from './general/general.component';
 import { LoginComponent } from './login/login.component';
 import { SigninComponent } from './signin/signin.component';
 import { EmpresasComponent } from './empresas/empresas.component';
+import { LoginEmpresasComponent } from './login-empresas/login-empresas.component';
+import { SigninEmpresasComponent } from './signin-empresas/signin-empresas.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { EmpresasComponent } from './empresas/empresas.component';
     GeneralComponent,
     LoginComponent,
     SigninComponent,
-    EmpresasComponent
+    EmpresasComponent,
+    LoginEmpresasComponent,
+    SigninEmpresasComponent
   ],
   imports: [
     BrowserModule,
