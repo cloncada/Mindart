@@ -35,7 +35,7 @@ import { EmpresasComponent } from './empresas/empresas.component';
     MatIconModule,
     MatCardModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
   ],
   entryComponents: [LoginComponent,SigninComponent,EmpresasComponent],
   providers: [],
