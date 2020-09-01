@@ -8,8 +8,8 @@
     <a mat-button routerLink="inicio" (click)="show=!show" *ngIf="!show" >Artistas</a>
     <div>
         <button mat-raised-button (click)="openDialog()" *ngIf="show" color="primary">Log in</button>
-        <button mat-raised-button (click)="openDialogempresas()" *ngIf="!show" color="primary">Log in - empresas</button>
+        <button mat-raised-button (click)="openDialogempresas()" *ngIf="!show" color="accent">Log in</button>
         <button mat-raised-button (click)="openDialogsignin()" *ngIf="show" color="warn">Sign in</button>
-        <button mat-raised-button (click)="openDialogsigninempresas()" *ngIf="!show" color="warn">Sign in - empresas</button>
+        <button mat-raised-button (click)="openDialogsigninempresas()" *ngIf="!show" color="primary">Sign in</button>
     </div>
 </mat-toolbar>
