@@ -3,16 +3,13 @@
     <img src="assets\Mindart.jpeg">
     <div class="espacio"></div>
 
-    <button mat-icon-button color="accent" routerLink="inicio" *ngIf="home" (click)="show=true" (click)="home=!home">
-        <mat-icon>home</mat-icon>
-    </button>
-    <a mat-button routerLink="info" (click)="home=!home">Info</a>
-    <a mat-button routerLink="empresas" (click)="show=!show" *ngIf="show ">Empresas</a>
+    <a mat-button (click)="openInfo()">Info</a>
+    <a mat-button routerLink="empresas" (click)="show=!show" *ngIf="show">Empresas</a>
     <a mat-button routerLink="inicio" (click)="show=!show" *ngIf="!show" >Artistas</a>
     <div>
-        <button mat-raised-button (click)="openDialog()" color="primary">Log in</button>
-        <button mat-raised-button (click)="openDialog()" color="primary">Log in - empresas</button>
-        <button mat-raised-button (click)="openDialogsigin()" color="warn">Sign in</button>
-        <button mat-raised-button (click)="openDialogsigin()" color="warn">Sign in - empresas</button>
+        <button mat-raised-button (click)="openDialog()" *ngIf="show" color="primary">Log in</button>
+        <button mat-raised-button (click)="openDialogempresas()" *ngIf="!show" color="accent">Log in</button>
+        <button mat-raised-button (click)="openDialogsignin()" *ngIf="show" color="warn">Sign in</button>
+        <button mat-raised-button (click)="openDialogsigninempresas()" *ngIf="!show" color="primary">Sign in</button>
     </div>
 </mat-toolbar>
