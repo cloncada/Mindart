@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
+import { dashCaseToCamelCase } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-signin',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SigninComponent implements OnInit {
 
-  constructor() { }
+  email = new FormControl('', [Validators.required, Validators.email]);
 
+  constructor() {
+  }
   ngOnInit(): void {
   }
-
+  getErrorMessage() {
+    return this.email.hasError('email') ? 'No es un email valido' : '';
+  }
+  hide = true;
 }
