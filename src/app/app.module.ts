@@ -5,6 +5,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,6 +20,8 @@ import { SigninComponent } from './signin/signin.component';
 import { EmpresasComponent } from './empresas/empresas.component';
 import { LoginEmpresasComponent } from './login-empresas/login-empresas.component';
 import { SigninEmpresasComponent } from './signin-empresas/signin-empresas.component';
+import { FocusKeyManager } from '@angular/cdk/a11y';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -37,7 +43,12 @@ import { SigninEmpresasComponent } from './signin-empresas/signin-empresas.compo
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    FormsModule, 
+    ReactiveFormsModule
   ],
   entryComponents: [LoginComponent,SigninComponent,EmpresasComponent],
   providers: [],

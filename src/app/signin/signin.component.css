@@ -1,0 +1,26 @@
+.html_artistas{
+    text-align: center;
+    width: 250px;
+}
+.card{
+    border-radius: 15px;
+}
+.texto{
+    font-size:25px;
+}
+.input_contra{
+   width: 180px;
+}
+.mcontraseña{
+    size: 10px;
+}
+.btnrartistas{
+    background-color: #EC2019;
+    color: #ffffff;
+    border-radius: 15px;
+    width: 90px;
+    height: 37px;
+}
+.body{
+   background-color: black; 
+}
