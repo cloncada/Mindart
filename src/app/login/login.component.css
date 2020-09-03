@@ -1,0 +1,29 @@
+.html_LogArtista{
+  text-align: center;
+  width: 250px;
+  height: 357px;
+}
+.texto{
+  font-size:25px;
+}
+.espacio{
+  font-size:10px;
+}
+.label{
+font-size:12px;
+font-weight: 550;
+}
+.input_contra{
+ width: 180px;
+}
+
+.btnLog_artista{
+  background-color: #EC2019;
+  color: #ffffff;
+  border-radius: 85px;
+  width: 180px;
+  height: 37px;
+}
+.body{
+ background-color: black;
+}
