@@ -1,6 +1,31 @@
-.titulo{
-  background: white;
-  color:rgb(40, 41, 39);
-  text-align:center;
-  font-size: 90%
+.html_empresas{
+  text-align: center;
+  width: 290px;
+  height: 550px;
+}
+.texto{
+  font-size:25px;
+}
+.espacio{
+  font-size:10px;
+}
+.label{
+font-size:12px;
+font-weight: 550;
+}
+.input_contra{
+ width: 180px;
+}
+.mcontraseña{
+  size: 10px;
+}
+.btnrartistas{
+  background-color: #EC2019;
+  color: #ffffff;
+  border-radius: 85px;
+  width: 180px;
+  height: 37px;
+}
+.body{
+ background-color: black;
 }
