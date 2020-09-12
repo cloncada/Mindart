@@ -1,44 +1,62 @@
 
-<div class="html_artistas">
-    <img src="assets\Logos\2.png" width="70px">
-<p class="texto">Bienvenido a Mindart</p>
+<div class="html_artistas" >
 
+    <img src="assets\Logos\2.png" width="70px">
+
+<p class="texto">Bienvenido a Mindart</p>
+ 
 <div><mat-form-field hideRequiredMarker>
     <mat-label>Nombre</mat-label>
-    <input matInput required >
+    <input matInput name="name" [(ngModel)]="userModel.name" required >
 </mat-form-field>
-</div>
+</div>  
+<div><mat-form-field hideRequiredMarker>
+  <mat-label>Nombre de usuario</mat-label>
+  <input matInput name="username" [(ngModel)]="userModel.username" required >
+</mat-form-field>
+</div>  
+      
 <div>
     <mat-form-field hideRequiredMarker>
         <mat-label>Email</mat-label>
-        <input matInput placeholder="Ejemplo@hotmail.com" [formControl]="email" required>
+        <input matInput placeholder="Ejemplo@hotmail.com" [formControl]="email"  
+        [(ngModel)]="userModel.email" required>
         <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
       </mat-form-field>
 </div>
+
 <div>
     <mat-form-field hideRequiredMarker >
         <mat-label>Fecha Nacimiento</mat-label>
-        <input matInput type="date" required>
+        <input matInput type="date" name="Fecha" [(ngModel)]="userModel.date" required>
       </mat-form-field>
 </div>
+
 <div>
     <mat-form-field class="input_contra" hideRequiredMarker>
       <mat-label>Contraseña</mat-label>
-      <input matInput [type]="hide ? 'password' : 'text'" required  >
+      <input matInput [type]="hide ? 'password' : 'text'" name="contra" [(ngModel)]="userModel.password" required  >
       <button class="mcontraseña "mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
     </mat-form-field>
-     </div>
-  <div>
+</div>
+     
+<div>
     <mat-form-field hideRequiredMarker>
       <mat-label>Confirmar Contraseña</mat-label>
-      <input matInput [type]="hide ? 'password' : 'text'" name="contra2" required>
+      <input matInput [type]="hide ? 'password' : 'text'" name="contra2"[(ngModel)]="userModel.confirmpassword" required>
     </mat-form-field>
-  </div>
+</div>
   <p class="espacio"></p>
-  <div>
-    <button class="btnrartistas" mat-raised-button >Guardar</button></div>
+<div> 
+    <button class="btnrartistas"(click)="onSubmit()" novalidate mat-raised-button>Guardar</button>
+    </div>
     <p class="label">¿Ya tienes cuenta? Inicia sesion</p>
     <div>
+    <div class="relleno">      
+      asd
+    </div>
 </div>
+</div>
+
