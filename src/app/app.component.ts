@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AppModule} from './app.module';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,14 +11,19 @@ export class AppComponent {
   title = 'app';  
   change: boolean = true;
 
-  constructor(){}
+  constructor(private cdRef:ChangeDetectorRef){}
 
-  ChangeToolBar(){
-    this.change=false;
+  TrueToolBar(){
+    this.change=true;
     console.log(this.change);
   }
 
   ngOnInit(): void {
   }
 
+  FalseToolBar(){
+    this.change=false;
+    console.log(this.change);
+    this.cdRef.detectChanges();
+  }
 }
