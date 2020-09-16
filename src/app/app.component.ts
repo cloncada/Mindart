@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppModule} from './app.module';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';  
+  change: boolean = true;
+
+  constructor(){}
+
+  ChangeToolBar(){
+    this.change=false;
+    console.log(this.change);
+  }
+
+  ngOnInit(): void {
+  }
+
 }

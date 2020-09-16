@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-login-admin',
@@ -10,9 +11,10 @@ export class LoginAdminComponent implements OnInit {
 
   email = new FormControl('', [Validators.required, Validators.email]);
   
-  constructor() { }
+  constructor(private app:AppComponent) { }
 
   ngOnInit(): void {
+    this.app.ChangeToolBar();
   }
 
   getErrorMessage() {
