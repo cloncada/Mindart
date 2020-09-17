@@ -6,6 +6,10 @@
     margin-right: 60px;
 }
 
+.admin{
+    background-image: url('../../assets/Admin\Photo8.jpg');
+}
+
 .texto {
     font-size: 25px;
 }

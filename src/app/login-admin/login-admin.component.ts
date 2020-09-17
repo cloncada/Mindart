@@ -14,7 +14,7 @@ export class LoginAdminComponent implements OnInit {
   constructor(private app:AppComponent) { }
 
   ngOnInit(): void {
-    this.app.ChangeToolBar();
+    this.app.FalseToolBar();
   }
 
   getErrorMessage() {
