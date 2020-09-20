@@ -29,10 +29,10 @@ export class SigninComponent implements OnInit {
 
   onSubmit(){
      
-     /* console.log(this.datos.value);
+      console.log(this.datos.value);
       this.service.addArtist("http://localhost:8080/addArtist", this.datos.value).subscribe(data=>{
         alert("Usuario creado con exito...!");
-      });*/ 
+      }); 
       this.submitted=true;
   }
 

@@ -24,6 +24,9 @@ import { LoginEmpresasComponent } from './login-empresas/login-empresas.componen
 import { SigninEmpresasComponent } from './signin-empresas/signin-empresas.component';
 import { FocusKeyManager } from '@angular/cdk/a11y';
 import { from } from 'rxjs';
+import { PerfilArtistasComponent } from './perfil-artistas/perfil-artistas.component';
+import { PerfilEmpresasComponent } from './perfil-empresas/perfil-empresas.component';
+import { LoginAdminComponent } from './login-admin/login-admin.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,9 @@ import { from } from 'rxjs';
     EmpresasComponent,
     LoginEmpresasComponent,
     SigninEmpresasComponent,
+    PerfilArtistasComponent,
+    PerfilEmpresasComponent,
+    LoginAdminComponent
   ],
   imports: [
     BrowserModule,

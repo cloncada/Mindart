@@ -1,0 +1,46 @@
+<mat-grid-list cols="6">
+    <mat-grid-tile><img src="assets\Photos\Photo9.jpeg"></mat-grid-tile>
+    <mat-grid-tile rowspan="2" colspan="2" class="admin">
+        <mat-card class="format-login">
+            <div class="html_LogEmpresa">
+                <img src="assets\Logos\2.png" width="60px">
+                <p class="texto">Bienvenido a Mindart</p>
+            </div>
+
+            <mat-card-content>
+                <div>
+                    <mat-form-field hideRequiredMarker>
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="Ejemplo@hotmail.com" [formControl]="email" required>
+                        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div>
+                    <mat-form-field class="input_contra" hideRequiredMarker>
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" required>
+                        <button class="mcontraseña " mat-icon-button matSuffix (click)="hide = !hide"
+                            [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+
+                <p class="espacio"></p>
+                <div>
+                    <button class="btnLog_empresa" mat-raised-button>Ingresar</button>
+                </div>
+                <p class="label">¿No tienes cuenta? Registrate</p>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2"><img src="assets\Admin\Photo4.jpg"></mat-grid-tile>
+    <mat-grid-tile rowspan="2"><img src="assets\Admin\Photo6.jpg"></mat-grid-tile>
+    <mat-grid-tile rowspan="2"><img src="assets\Admin\Photo11.jpeg"></mat-grid-tile>
+    <mat-grid-tile rowspan="2"><img src="assets\Admin\Photo7.jpg"></mat-grid-tile>
+    <mat-grid-tile><img src="assets\Empresas\Photo9.jpeg"></mat-grid-tile>
+    <mat-grid-tile colspan="2"><img src="assets\Admin\Photo3.jpg"></mat-grid-tile>
+    <mat-grid-tile colspan="2"><img src="assets\Admin\Photo2.jpg"></mat-grid-tile>
+
+</mat-grid-list>
