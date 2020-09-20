@@ -1,5 +1,6 @@
 
-<div class="html_artistas" >
+
+<div class="html_artistas" *ngIf="!submitted" [formGroup]="datos" >
 
     <img src="assets\Logos\2.png" width="70px">
 
@@ -7,35 +8,37 @@
  
 <div><mat-form-field hideRequiredMarker>
     <mat-label>Nombre</mat-label>
-    <input matInput name="name" [(ngModel)]="userModel.name" required >
+    <input matInput type="text" formControlName="name" required >
 </mat-form-field>
+
 </div>  
 <div><mat-form-field hideRequiredMarker>
-  <mat-label>Nombre de usuario</mat-label>
-  <input matInput name="username" [(ngModel)]="userModel.username" required >
+  <mat-label>Numero Telefonico</mat-label>
+  <input matInput type="number" formControlName="number"  required >
 </mat-form-field>
 </div>  
       
 <div>
     <mat-form-field hideRequiredMarker>
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="Ejemplo@hotmail.com" [formControl]="email"  
-        [(ngModel)]="userModel.email" required>
-        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-      </mat-form-field>
-</div>
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Ejemplo@hotmail.com"
+      formControlName="email" 
+      required>
+      <mat-error *ngIf="datos.get('email').hasError && datos.get('email').value!=''">El email no es valido</mat-error>
+    </mat-form-field>
+    </div>
 
 <div>
     <mat-form-field hideRequiredMarker >
         <mat-label>Fecha Nacimiento</mat-label>
-        <input matInput type="date" name="Fecha" [(ngModel)]="userModel.date" required>
+        <input matInput type="date" formControlName="dob" required>
       </mat-form-field>
 </div>
 
 <div>
     <mat-form-field class="input_contra" hideRequiredMarker>
       <mat-label>Contraseña</mat-label>
-      <input matInput [type]="hide ? 'password' : 'text'" name="contra" [(ngModel)]="userModel.password" required  >
+      <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required  >
       <button class="mcontraseña "mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
@@ -45,12 +48,12 @@
 <div>
     <mat-form-field hideRequiredMarker>
       <mat-label>Confirmar Contraseña</mat-label>
-      <input matInput [type]="hide ? 'password' : 'text'" name="contra2"[(ngModel)]="userModel.confirmpassword" required>
+      <input matInput [type]="hide ? 'password' : 'text'" required>
     </mat-form-field>
 </div>
   <p class="espacio"></p>
 <div> 
-    <button class="btnrartistas"(click)="onSubmit()" novalidate mat-raised-button>Guardar</button>
+    <button class="btnrartistas"(click)="onSubmit()" [disabled]="datos.invalid" novalidate mat-raised-button>Guardar</button>
     </div>
     <p class="label">¿Ya tienes cuenta? Inicia sesion</p>
     <div>
@@ -59,4 +62,5 @@
     </div>
 </div>
 </div>
-
+<p *ngIf="submitted">Gracias por unirte a la familia Mindart</p>
+<h1 class=corazao *ngIf="submitted" > {{corazao}} </h1>
