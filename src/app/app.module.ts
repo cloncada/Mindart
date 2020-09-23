@@ -10,6 +10,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -56,7 +57,8 @@ import { LoginAdminComponent } from './login-admin/login-admin.component';
     MatSelectModule,
     FormsModule, 
     ReactiveFormsModule,
-    MatGridListModule
+    MatGridListModule,
+    HttpClientModule
   ],
   entryComponents: [LoginComponent,SigninComponent,EmpresasComponent],
   providers: [],
