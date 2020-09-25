@@ -7,7 +7,7 @@ import { LoginAdminComponent } from './login-admin/login-admin.component';
 import { PerfilArtistasComponent } from './perfil-artistas/perfil-artistas.component';
 
 const routes: Routes = [
-{path :"inicio", component: InicioComponent},
+{path :"artistas", component: InicioComponent},
 {path :"empresas", component: EmpresasComponent},
 {path :"info", component:InfoComponent},
 {path :"login-admin", component:LoginAdminComponent},
