@@ -20,8 +20,8 @@
     /*width:300px;
     height:300px;*/
     
-    width: 200px;
-    height: 200px;
+    width:130px;
+    height: 130px;
     margin: auto;
     /*width: 200px;
     margin: 200px;*/
@@ -33,7 +33,7 @@
     height: 0px;
     margin: auto;
     text-align: center;
-    line-height: 520px;
+    line-height: 350px;
 }
 .Texto2{
     widows: 0px;
