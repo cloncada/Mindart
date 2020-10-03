@@ -13,4 +13,8 @@ export class CompaniesServicesService {
        return this.http.post(Url,compania );
 
   }
+  loginCompany (Url: string, loginCompany: any){
+
+    return this.http.post(Url, loginCompany);
+  }
 }

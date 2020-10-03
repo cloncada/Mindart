@@ -33,7 +33,7 @@
 <div>
   <mat-form-field class="input_contra" hideRequiredMarker>
     <mat-label>Contraseña</mat-label>
-    <input matInput [type]="hide ? 'password' : 'text'" required formControlName=pass >
+    <input matInput [type]="hide ? 'password' : 'text'" required formControlName=password >
     <button class="mcontraseña "mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
       <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
