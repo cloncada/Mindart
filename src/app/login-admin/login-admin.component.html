@@ -1,4 +1,4 @@
-<mat-grid-list cols="6">
+<mat-grid-list cols="6"  [formGroup]="datosLogin">
     <mat-grid-tile><img src="assets\Photos\Photo9.jpeg"></mat-grid-tile>
     <mat-grid-tile rowspan="2" colspan="2" class="admin">
         <mat-card class="format-login">
@@ -10,16 +10,16 @@
             <mat-card-content>
                 <div>
                     <mat-form-field hideRequiredMarker>
-                        <mat-label>Email</mat-label>
-                        <input matInput placeholder="Ejemplo@hotmail.com" [formControl]="email" required>
-                        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                        <mat-label >Email</mat-label>
+                        <input matInput placeholder="Ejemplo@hotmail.com" formControlName="email" required>
+                        
                     </mat-form-field>
                 </div>
 
                 <div>
                     <mat-form-field class="input_contra" hideRequiredMarker>
                         <mat-label>Contraseña</mat-label>
-                        <input matInput [type]="hide ? 'password' : 'text'" required>
+                        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
                         <button class="mcontraseña " mat-icon-button matSuffix (click)="hide = !hide"
                             [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -29,7 +29,7 @@
 
                 <p class="espacio"></p>
                 <div>
-                    <button class="btnLog_empresa" mat-raised-button>Ingresar</button>
+                    <button class="btnLog_empresa" (click)="onSubmitLogin()" mat-raised-button>Ingresar</button>
                 </div>
                 <p class="label">¿No tienes cuenta? Registrate</p>
             </mat-card-content>

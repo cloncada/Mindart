@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { dashCaseToCamelCase } from '@angular/compiler/src/util';
-
+import {ArtistServiceService} from '../services/artist-service.service';
+import { Location, } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -10,14 +11,27 @@ import { dashCaseToCamelCase } from '@angular/compiler/src/util';
 })
 export class LoginComponent implements OnInit {
 
-  email = new FormControl('', [Validators.required, Validators.email]);
+  datosLogin = new FormGroup({
+    email:new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('',[Validators.required])
+  });
+  hide = true;
 
-  constructor() {
+  constructor(private service: ArtistServiceService,
+    private location: Location
+    ) {
   }
   ngOnInit(): void {
   }
-  getErrorMessage() {
-    return this.email.hasError('email') ? 'No es un email valido' : '';
+
+  onSubmitLogin(){
+     
+     
+      this.service.addArtist("http://localhost:8080/login/artist", this.datosLogin.value).subscribe(data=>{
+        this.location.go("/perfil-artistas"),
+        window.location.reload();
+    }); 
   }
-  hide = true;
+  
+
 }

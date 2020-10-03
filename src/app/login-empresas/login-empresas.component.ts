@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, Validators, FormGroup  } from '@angular/forms';
 import { dashCaseToCamelCase } from '@angular/compiler/src/util';
+import {CompaniesServicesService} from '../services/companies-services.service';
 
 
 @Component({
@@ -11,14 +12,20 @@ import { dashCaseToCamelCase } from '@angular/compiler/src/util';
 export class LoginEmpresasComponent implements OnInit {
 
 
-  email = new FormControl('', [Validators.required, Validators.email]);
+  datosLogin = new FormGroup({
+    email:new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('',[Validators.required])
+  });
+  hide = true;
 
-  constructor() {
+  constructor(private service: CompaniesServicesService) {
   }
   ngOnInit(): void {
   }
-  getErrorMessage() {
-    return this.email.hasError('email') ? 'No es un email valido' : '';
-  }
-  hide = true;
+  onSubmitLogin(){
+    this.service.loginCompany("http://localhost:8080/login/company", this.datosLogin.value).subscribe(data=>{
+    alert("Funciona");
+  }); 
+}
+ 
 }

@@ -25,7 +25,7 @@ export class SigninEmpresasComponent implements OnInit {
     nit: new FormControl('',[Validators.required]),
     email: new FormControl('',[Validators.required, Validators.email]),
     number:new FormControl('', [Validators.required]),
-    pass:new FormControl('', [Validators.required])
+    password:new FormControl('', [Validators.required])
   });
 
   hide = true;
