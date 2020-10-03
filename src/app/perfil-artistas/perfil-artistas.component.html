@@ -13,7 +13,7 @@
             </button>
         </div>
         <div class="btn4" >
-            <button type="button" onclick="location.href='artistas/artistas.component.html'" mat-icon-button aria-label="Example icon button with a vertical three dot icon" style="margin: 10px">
+            <button type="button" onclick="location.href='inicio/inicio.component.html'" mat-icon-button aria-label="Example icon button with a vertical three dot icon" style="margin: 10px">
                 <mat-icon>home</mat-icon>
               </button>
             </div>
@@ -48,3 +48,5 @@
 </div-->
 <!--input type="file" (change)="onFileSelected($event)">
 <button type="button" (click)="onUpload()">Upload</button-->
+<img [src]="url" height="200"><br>
+<input type="file" (change)="onselectFile($event)">
