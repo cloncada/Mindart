@@ -1,21 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PerfilArtistasComponent } from './perfil-artistas.component';
+import { NotificacionesComponent } from './notificaciones.component';
 
-
-describe('PerfilArtistasComponent', () => {
-  let component: PerfilArtistasComponent;
-  let fixture: ComponentFixture<PerfilArtistasComponent>;
+describe('NotificacionesComponent', () => {
+  let component: NotificacionesComponent;
+  let fixture: ComponentFixture<NotificacionesComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PerfilArtistasComponent ]
+      declarations: [ NotificacionesComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PerfilArtistasComponent);
+    fixture = TestBed.createComponent(NotificacionesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -24,4 +23,3 @@ describe('PerfilArtistasComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-
