@@ -27,6 +27,9 @@ import { from } from 'rxjs';
 import { PerfilArtistasComponent } from './perfil-artistas/perfil-artistas.component';
 import { PerfilEmpresasComponent } from './perfil-empresas/perfil-empresas.component';
 import { LoginAdminComponent } from './login-admin/login-admin.component';
+import { InicioArtistasComponent } from './inicio-artistas/inicio-artistas.component';
+import { InicioEmpresasComponent } from './inicio-empresas/inicio-empresas.component';
+import { InicioAdminComponent } from './inicio-admin/inicio-admin.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,10 @@ import { LoginAdminComponent } from './login-admin/login-admin.component';
     SigninEmpresasComponent,
     PerfilArtistasComponent,
     PerfilEmpresasComponent,
-    LoginAdminComponent
+    LoginAdminComponent,
+    InicioArtistasComponent,
+    InicioEmpresasComponent,
+    InicioAdminComponent
   ],
   imports: [
     BrowserModule,

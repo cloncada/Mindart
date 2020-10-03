@@ -1,21 +1,16 @@
-<div class="html_LogEmpresa">
+<div class="html_LogEmpresa"  [formGroup]="datosLogin">
   <img src="assets\Logos\2.png" width="60px">
 <p class="texto">Bienvenido a Mindart</p>
 <div>
   <mat-form-field hideRequiredMarker>
       <mat-label>Email</mat-label>
-      <input matInput placeholder="Ejemplo@hotmail.com"  required>
+      <input matInput placeholder="Ejemplo@hotmail.com"  formControlName="email" required>
     </mat-form-field>
-</div>
-<div><mat-form-field hideRequiredMarker>
-  <mat-label>Nit</mat-label>
-  <input matInput required >
-</mat-form-field>
 </div>
 <div>
   <mat-form-field class="input_contra" hideRequiredMarker>
     <mat-label>Contraseña</mat-label>
-    <input matInput [type]="hide ? 'password' : 'text'" required  >
+    <input matInput [type]="hide ? 'password' : 'text'" required  formControlName="password">
     <button class="mcontraseña "mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
       <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
@@ -24,7 +19,7 @@
 
 <p class="espacio"></p>
 <div>
-  <button class="btnLog_empresa" mat-raised-button >Ingresar</button></div>
+  <button class="btnLog_empresa" (click)="onSubmitLogin()" mat-raised-button >Ingresar</button></div>
   <p class="label">¿No tienes cuenta? Registrate</p>
 
 </div>

@@ -1,28 +1,39 @@
-<div class="html_empresas">
+<div class="html_empresas" [formGroup]=datosCompanies>
   <img src="assets\Logos\2.png" width="60px">
 <p class="texto">Bienvenido a Mindart</p>
 <div><mat-form-field hideRequiredMarker>
   <mat-label>Nombre</mat-label>
-  <input matInput required >
+  <input matInput type="text" required formControlName=name>
 </mat-form-field>
 </div>
 <div>
   <mat-form-field hideRequiredMarker>
       <mat-label>Email</mat-label>
-      <input matInput placeholder="Ejemplo@hotmail.com" [formControl]="email" required>
-      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      <input matInput placeholder="Ejemplo@hotmail.com"  required formControlName=email>
+      <mat-error *ngIf="datosCompanies.get('email').hasError && datosCompanies.get('email').value!=''"> E-mail no valido  </mat-error>
+
+
+
     </mat-form-field>
 </div>
 <div>
   <mat-form-field hideRequiredMarker >
       <mat-label>Nit</mat-label>
-      <input matInput  required>
+      <input matInput type= "number"  required formControlName=nit >
     </mat-form-field>
 </div>
+
+<div>
+  <mat-form-field hideRequiredMarker >
+      <mat-label>Telefono</mat-label>
+      <input matInput type= "number"  required formControlName=number >
+    </mat-form-field>
+</div>
+
 <div>
   <mat-form-field class="input_contra" hideRequiredMarker>
     <mat-label>Contraseña</mat-label>
-    <input matInput [type]="hide ? 'password' : 'text'" required  >
+    <input matInput [type]="hide ? 'password' : 'text'" required formControlName=password >
     <button class="mcontraseña "mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
       <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
@@ -36,7 +47,7 @@
 </div>
 <p class="espacio"></p>
 <div>
-  <button class="btnrempresas" mat-raised-button >Guardar</button></div>
+  <button class="btnrempresas" mat-raised-button (click)= "onSubmit()" [disabled]= "datosCompanies.invalid" novalidate mat-raised-button>Guardar</button></div>
   <p class="label">¿Ya tienes cuenta? Inicia sesion</p>
 
 </div>
