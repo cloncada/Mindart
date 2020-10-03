@@ -1,28 +1,23 @@
 <mat-toolbar class="arriba"><div class="perfil-artistas"></div>
     <img src="assets\Logos\Mindart.jpeg"> 
     <div class="espacio"></div>
-    <a href="inicio/inicio.component.html">Ir a inicio</a>
     <p class="espacio"></p>
-    <!--div class="btn1">
-        </mat-card>
-                        <button type="button" class="btn btn-default" data-dissmiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" data-dissmiss="modal">Guardar cambios</button>
-        </button>
-    </div-->
         <div class="btn2" >
-            <button type="button" mat-fab color="primary" aria-label="Example icon button with a delete icon" layout-align="end center">
+            <button (click)="openInfo()" type="button" mat-icon-button aria-label="Example icon button with a vertical three dot icon" >
               <mat-icon>notification_important</mat-icon>
             </button>
         </div>
         <div class="btn3" >
-            <button type="button" mat-fab color="primary" aria-label="Example icon button with a delete icon" layout-align="end center">
+            <button type="button" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
               <mat-icon>more_vert</mat-icon>
             </button>
         </div>
         <div class="btn4" >
-            <button type="button" mat-fab color="primary" aria-label="Example icon button with a delete icon" layout-align="end center" style="margin: 10px">
+            <button type="button" onclick="location.href='artistas/artistas.component.html'" mat-icon-button aria-label="Example icon button with a vertical three dot icon" style="margin: 10px">
                 <mat-icon>home</mat-icon>
               </button>
+            </div>
+            <div>
             </div>
     </mat-toolbar>
     <div class="Texto">
@@ -36,28 +31,20 @@
     <div class="perfil">
     <img class="imgRedonda" src="assets\Photos\perfil.jpg" width="80px" >
 </div>
-<!--div class="container section">
-    <a href="#idModal" class="btn modal-trigger red" color="red">Modal ancla</a>
-    <button class="btn modal-trigger blue" data-target="idModal2">Modal button</button>
-    <div id="idModal2" class="modal">
-        <div class="modal-content">
-            <h4>Tienes 10 notificaciones nuevas</h4>
-            <p> Tienes 20 notificaciones anteriores</p>
-        </div>
-        <div class="modal-footer">
-            <a href="" class="btn modal-close">Cerrar</a>
-        </div>
-    </div>
-    <div id="idModal" class="modal">
-        <div class="modal-content">
-            <h4>Tienes 5 notificaciones nuevas</h4>
-            <p> Tienes 10 notificaciones anteriores</p>
-        </div>
-        <div class="modal-footer">
-            <a href="" class="btn modal-close">Cerrar</a>
-        </div>
-    </div>
+<!--div class="foto1">
+    <img  src="assets\Photos\Photo6.jpeg" width="200px" >
+</div>
+<div class="foto2">
+    <img  src="assets\Photos\Photo10.jpeg" width="200px" >
+</div>
+<div class="foto3">
+    <img  src="assets\Photos\Photo3.jpeg" width="200px" >
+</div>
+<div class="foto4">
+    <img  src="assets\Photos\tigre.jpg" width="200px" >
+</div>
+<div class="foto5">
+    <img  src="assets\Photos\Concierto.jpg" width="200px" >
 </div-->
-
-
-
+<!--input type="file" (change)="onFileSelected($event)">
+<button type="button" (click)="onUpload()">Upload</button-->

@@ -30,6 +30,7 @@ import { LoginAdminComponent } from './login-admin/login-admin.component';
 import { InicioArtistasComponent } from './inicio-artistas/inicio-artistas.component';
 import { InicioEmpresasComponent } from './inicio-empresas/inicio-empresas.component';
 import { InicioAdminComponent } from './inicio-admin/inicio-admin.component';
+import { NotificacionesComponent } from './notificaciones/notificaciones.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { InicioAdminComponent } from './inicio-admin/inicio-admin.component';
     LoginAdminComponent,
     InicioArtistasComponent,
     InicioEmpresasComponent,
-    InicioAdminComponent
+    InicioAdminComponent,
+    NotificacionesComponent
   ],
   imports: [
     BrowserModule,
