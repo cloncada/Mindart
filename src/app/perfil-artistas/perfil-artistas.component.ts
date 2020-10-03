@@ -2,10 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
 import { MatDialog } from '@angular/material/dialog';
 import { NotificacionesComponent } from '../notificaciones/notificaciones.component';
-import { InicioComponent } from '../inicio/inicio.component';
-import { InicioArtistasComponent } from '../inicio-artistas/inicio-artistas.component';
-import { GeneralComponent } from '../general/general.component';
-import { InicioAdminComponent } from '../inicio-admin/inicio-admin.component';
+
 
 
 @Component({
