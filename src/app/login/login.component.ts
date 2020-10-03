@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { dashCaseToCamelCase } from '@angular/compiler/src/util';
 import {ArtistServiceService} from '../services/artist-service.service';
-import { MatDialog } from '@angular/material/dialog';
-import{PerfilArtistasComponent} from '../perfil-artistas/perfil-artistas.component';
-  import { from } from 'rxjs';
+import { Location, } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -19,17 +17,19 @@ export class LoginComponent implements OnInit {
   });
   hide = true;
 
-  constructor(private service: ArtistServiceService, public dialog: MatDialog) {
+  constructor(private service: ArtistServiceService,
+    private location: Location
+    ) {
   }
   ngOnInit(): void {
   }
 
   onSubmitLogin(){
      
-    
+     
       this.service.addArtist("http://localhost:8080/login/artist", this.datosLogin.value).subscribe(data=>{
-        //this.dialog.open(PerfilArtistasComponent);
-        alert("funciona");
+        this.location.go("/perfil-artistas"),
+        window.location.reload();
     }); 
   }
   
