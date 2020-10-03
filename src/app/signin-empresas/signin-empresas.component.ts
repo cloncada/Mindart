@@ -16,8 +16,6 @@ export class SigninEmpresasComponent implements OnInit {
   }
   ngOnInit(): void {
   }
-  getErrorMessage() {
-    return this.email.hasError('email') ? 'No es un email valido' : '';
-  }
+  
   hide = true;
 }

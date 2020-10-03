@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ArtistServiceService {
 
   constructor(private http: HttpClient) { }
@@ -14,4 +15,9 @@ export class ArtistServiceService {
        return this.http.post(Url, artista);
 
   }
+  loginArtist (Url: string, logartista: any){
+
+    return this.http.post(Url, logartista);
+
+}
 }
