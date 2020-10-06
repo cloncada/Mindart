@@ -21,17 +21,14 @@ export class LoginComponent implements OnInit {
     private location: Location
     ) {
   }
+  
   ngOnInit(): void {
   }
 
   onSubmitLogin(){
-     
-     
       this.service.addArtist("http://localhost:8080/login/artist", this.datosLogin.value).subscribe(data=>{
         this.location.go("/perfil-artistas"),
         window.location.reload();
     }); 
   }
-  
-
 }
