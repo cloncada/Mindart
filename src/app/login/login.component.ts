@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { dashCaseToCamelCase } from '@angular/compiler/src/util';
 import {ArtistServiceService} from '../services/artist-service.service';
-import { Location, } from '@angular/common';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-login',
