@@ -32,6 +32,8 @@ export class LoginAdminComponent implements OnInit {
       this.location.go("/inicio-admin"),
       window.location.reload();
       this.admin=data;
+      localStorage.setItem("idAdmin", this.admin.id);
+      
     }, (error) => {
       alert("Usuario y contraseña no coinciden");
     

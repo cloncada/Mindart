@@ -30,6 +30,8 @@ export class LoginEmpresasComponent implements OnInit {
       this.location.go("/inicio-empresas"),
       window.location.reload();
       this.company=data;
+      localStorage.setItem("idCompany", this.company.id);
+      
   }, (error) => {
     alert("Usuario y contraseña no coinciden");
     
