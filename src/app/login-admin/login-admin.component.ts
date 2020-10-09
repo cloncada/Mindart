@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AppComponent } from '../app.component';
 import {AdminServicesService} from '../services/admin-services.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-login-admin',
@@ -16,7 +17,8 @@ export class LoginAdminComponent implements OnInit {
   });
   hide = true;
   
-  constructor(private service: AdminServicesService) {
+  constructor(private service: AdminServicesService,
+    private location: Location) {
   }
 
   ngOnInit(): void {
@@ -26,7 +28,8 @@ export class LoginAdminComponent implements OnInit {
      
     console.log(this.datosLogin.value);
     this.service.loginAdmin("http://localhost:8080/login/admin", this.datosLogin.value).subscribe(data=>{
-      alert("funciona");
+      this.location.go("/inicio-admin"),
+      window.location.reload();
     }); 
 }
 

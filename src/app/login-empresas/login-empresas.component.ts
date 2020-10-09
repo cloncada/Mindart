@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup  } from '@angular/forms';
 import { dashCaseToCamelCase } from '@angular/compiler/src/util';
 import {CompaniesServicesService} from '../services/companies-services.service';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -18,13 +19,15 @@ export class LoginEmpresasComponent implements OnInit {
   });
   hide = true;
 
-  constructor(private service: CompaniesServicesService) {
+  constructor(private service: CompaniesServicesService,
+    private location: Location) {
   }
   ngOnInit(): void {
   }
   onSubmitLogin(){
     this.service.loginCompany("http://localhost:8080/login/company", this.datosLogin.value).subscribe(data=>{
-    alert("Funciona");
+      this.location.go("/inicio-empresas"),
+        window.location.reload();
   }); 
 }
  
