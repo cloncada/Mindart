@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
     password: new FormControl('',[Validators.required])
   });
   hide = true;
+  artista:any;
 
   constructor(private service: ArtistServiceService,
     private location: Location
@@ -25,13 +26,16 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmitLogin(){
-     
-     
+
       this.service.addArtist("http://localhost:8080/login/artist", this.datosLogin.value).subscribe(data=>{
-        this.location.go("/perfil-artistas"),
-        window.location.reload();
-    }); 
-  }
+       this.artista=data;
+       console.log(this.artista.id);
+       this.location.go("/perfil-artistas");
+  }, (error) => {
+      alert("Usuario y contraseña no coinciden");
+    
+  });
   
+}
 
 }

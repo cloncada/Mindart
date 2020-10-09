@@ -18,6 +18,7 @@ export class LoginEmpresasComponent implements OnInit {
     password: new FormControl('',[Validators.required])
   });
   hide = true;
+  company:any;
 
   constructor(private service: CompaniesServicesService,
     private location: Location) {
@@ -27,8 +28,12 @@ export class LoginEmpresasComponent implements OnInit {
   onSubmitLogin(){
     this.service.loginCompany("http://localhost:8080/login/company", this.datosLogin.value).subscribe(data=>{
       this.location.go("/inicio-empresas"),
-        window.location.reload();
-  }); 
+      window.location.reload();
+      this.company=data;
+  }, (error) => {
+    alert("Usuario y contraseña no coinciden");
+    
+  });
 }
  
 }
