@@ -1,1 +1,37 @@
-<p>perfil-empresas works!</p>
+<mat-toolbar class="arriba">
+    <img src="assets\Logos\Mindart.jpeg"> 
+    <p class="espacio"></p>
+    <button class="btn2" (click)="openInfo()" type="button" mat-icon-button aria-label="Example icon button with a vertical three dot icon" >
+        <mat-icon>notification_important</mat-icon>
+    </button>
+    <button class="btn3" type="button" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+    <button class="btn4"  type="button" onclick="location.href='inicio/inicio.component.html'" mat-icon-button aria-label="Example icon button with a vertical three dot icon" style="margin: 10px">
+        <mat-icon>home</mat-icon>
+    </button>
+</mat-toolbar>
+
+<div class="perfil">
+    <img class="imgRedonda" [src]="profileImg">
+    <button type="button" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+        <mat-icon>edit</mat-icon>
+    </button>
+    <h1> REACHING DREAMS </h1>
+    
+</div>
+
+<button class="BtnNuevoP" mat-raised-button>
+    NUEVO PROYECTO
+    <mat-icon>add_circle_outline</mat-icon>
+</button>
+
+
+<hr class="Linea">
+<p class="Titulos"><strong>MIS PROYECTOS</strong></p>
+<div class="proyectos">
+    Proyecto 1
+    <button type="button" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+</div>

@@ -1,0 +1,62 @@
+.arriba{
+    background: white;
+    margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+.perfil{
+    text-align: center;
+    font-size: 80%;
+    color:#37474F;    
+}
+
+.imgRedonda {
+    width:130px;
+    height: 130px;
+    border-radius:160px;
+    border:6px solid #03A9F4;
+    text-align:center;
+    
+    
+}
+
+.btn2{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+.boton_notificaciones{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.Titulos{
+    font-size: 50;
+    padding-left:10px;
+    color: #616161;
+}
+
+.Linea{
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+    margin: 20px 10px 5px;
+}
+
+.BtnNuevoP{
+  margin-left: 75%;
+  margin-right: 2%;
+  background: #2E7D32;
+  color: white;
+}
+
+.proyectos{
+  border-width: 1px;
+  padding: 8%;
+  background: #EEEEEE;
+  width: 20%;
+  margin-left: 10px;
+  text-align: center;
+  color: #616161;
+}

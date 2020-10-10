@@ -52,7 +52,7 @@ import { SubirArchivoComponent } from './subir-archivo/subir-archivo.component';
     InicioEmpresasComponent,
     InicioAdminComponent,
     NotificacionesComponent,
-    SubirArchivoComponent
+    SubirArchivoComponent,
   ],
   imports: [
     BrowserModule,
