@@ -16,6 +16,7 @@ export class LoginAdminComponent implements OnInit {
     password: new FormControl('',[Validators.required])
   });
   hide = true;
+  admin: any;
   
   constructor(private service: AdminServicesService,
     private location: Location) {
@@ -30,7 +31,14 @@ export class LoginAdminComponent implements OnInit {
     this.service.loginAdmin("http://localhost:8080/login/admin", this.datosLogin.value).subscribe(data=>{
       this.location.go("/inicio-admin"),
       window.location.reload();
-    }); 
+      this.admin=data;
+      localStorage.setItem("idAdmin", this.admin.id);
+      localStorage.setItem("emailAdmin", this.admin.email);
+      
+    }, (error) => {
+      alert("Usuario y contraseña no coinciden");
+    
+  });
 }
 
   
