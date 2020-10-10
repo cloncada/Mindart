@@ -35,6 +35,8 @@ export class LoginComponent implements OnInit {
        window.location.reload(),
        console.log(this.artista.id),
        localStorage.setItem("idArtista", this.artista.id);
+       localStorage.setItem("emailArtista", this.artista.email);
+      
       
   }, (error) => {
       alert("Usuario y contraseña no coinciden");

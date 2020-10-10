@@ -21,6 +21,7 @@ onUpload(){
 
 }*/
   idArtista= localStorage.getItem("idArtista");
+  emailArtistas=localStorage.getItem("emailArtistas");
   
   constructor(private app:AppComponent, public dialog: MatDialog,
     
