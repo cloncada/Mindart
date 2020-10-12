@@ -3,8 +3,6 @@
 }*/
 .arriba{
     background: white;
-    /*width:0%;
-    height: 15%;*/
     margin-top: 10px;
   margin-bottom: 10px;
   margin-right: 10px;
@@ -12,9 +10,6 @@
 .perfil{
     text-align:center;
     font-size: 10%;
-    /*width: 100%;
-    max-width: 800px;
-    height: 600px;*/
 }
 .imgRedonda {
     /*width:300px;
@@ -36,80 +31,20 @@
     line-height: 350px;
     font-size: 80%;
 }
-.Texto2{
-    widows: 0px;
-    height: 0px;
-    margin: auto;
-    text-align: center;
-    line-height: 570px;
-}
 .btn2{
-    /*background-color: blue;
-    color: #ffffff;
-    width: 20px;
-    height: 50px;
-    background: white;
-    text-align: center;
-    font-size: 0%;*/
     margin-top: 10px;
   margin-bottom: 10px;
   margin-right: 10px;
 }
 .boton_notificaciones{
-    /*background-color: #EC2019;
-  color: #ffffff;
-  border-radius: 85px;
-  width: 180px;
-  height: 37px;*/
   margin-top: 10px;
   margin-bottom: 10px;
   margin-right: 10px;
 }
-/*.label{
-    font-size:12px;
-    font-weight: 550;
-    }*/
-.foto1{
-        widows: -200px;
-        margin: 0px;
-        /*height: 300px;*/
-        /*line-height: 600px;*/
-        position: relative;
-        top: 100px; 
-        left: 10px;
-
-}
-.foto2{
-    widows: -200px;
-        margin: 0px;
-        position: relative;
-        top: -205px; 
-    left: 300px;
-}
-.foto3{
-        widows: -200px;
-        margin: 0px;
-        position: relative;
-        top: -510px; 
-        left: 600px;
-}
-.foto4{
-        widows: -200px;
-        margin: 0px;
-        position: relative;
-        top: -815px; 
-    left: 900px;
-}
-.foto5{
-        widows: -200px;
-        margin: 0px;
-        position: relative;
-        top: -1120px; 
-        left: 1200px;
-}
-/*.archivo{
-    line-height: 100px;
-}*/
-.archivo1{
+/*.archivo1{
     line-height: 50px;
+}*/
+.subirarchivo{
+    line-height: 150px;
 }
+

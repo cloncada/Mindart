@@ -20,6 +20,7 @@ export class LoginEmpresasComponent implements OnInit {
     password: new FormControl('',[Validators.required])
   });
   hide = true;
+  company:any;
 
 
 
@@ -38,9 +39,24 @@ export class LoginEmpresasComponent implements OnInit {
     window.location.reload();
 
       this.location.go("/inicio-empresas"),
+
         window.location.reload();
 
   }); 
+
+      this.company=data;
+      let value = "1";
+      localStorage.setItem("vista", value);
+      window.location.reload();
+      localStorage.setItem("idCompany", this.company.id);
+      localStorage.setItem("emailCompany", this.company.email);
+    
+      
+  }, (error) => {
+    alert("Usuario y contraseña no coinciden");
+    
+  });
+
 }
  
 }

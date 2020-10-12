@@ -31,6 +31,8 @@ import { InicioArtistasComponent } from './inicio-artistas/inicio-artistas.compo
 import { InicioEmpresasComponent } from './inicio-empresas/inicio-empresas.component';
 import { InicioAdminComponent } from './inicio-admin/inicio-admin.component';
 import { NotificacionesComponent } from './notificaciones/notificaciones.component';
+import { SubirArchivoComponent } from './subir-archivo/subir-archivo.component';
+
 
 @NgModule({
   declarations: [
@@ -49,7 +51,8 @@ import { NotificacionesComponent } from './notificaciones/notificaciones.compone
     InicioArtistasComponent,
     InicioEmpresasComponent,
     InicioAdminComponent,
-    NotificacionesComponent
+    NotificacionesComponent,
+    SubirArchivoComponent,
   ],
   imports: [
     BrowserModule,

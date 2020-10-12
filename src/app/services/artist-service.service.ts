@@ -19,4 +19,5 @@ export class ArtistServiceService {
 
     return this.http.post(Url, logartista);
   }
+
 }
