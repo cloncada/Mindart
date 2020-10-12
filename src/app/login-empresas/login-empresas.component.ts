@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup  } from '@angular/forms';
 import { dashCaseToCamelCase } from '@angular/compiler/src/util';
 import {CompaniesServicesService} from '../services/companies-services.service';
+import { Location, } from '@angular/common';=======
 import { Location } from '@angular/common';
+
 
 
 @Component({
@@ -20,14 +22,28 @@ export class LoginEmpresasComponent implements OnInit {
   hide = true;
   company:any;
 
+
+
   constructor(private service: CompaniesServicesService,
     private location: Location) {
+
   }
+
   ngOnInit(): void {
   }
+
   onSubmitLogin(){
     this.service.loginCompany("http://localhost:8080/login/company", this.datosLogin.value).subscribe(data=>{
+
+    this.location.go("/perfil-artistas"),
+    window.location.reload();
+
       this.location.go("/inicio-empresas"),
+
+        window.location.reload();
+
+  }); 
+
       this.company=data;
       let value = "1";
       localStorage.setItem("vista", value);
@@ -40,6 +56,7 @@ export class LoginEmpresasComponent implements OnInit {
     alert("Usuario y contraseña no coinciden");
     
   });
+
 }
  
 }
