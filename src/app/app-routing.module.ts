@@ -9,6 +9,7 @@ import { PerfilEmpresasComponent } from './perfil-empresas/perfil-empresas.compo
 import { InicioAdminComponent } from './inicio-admin/inicio-admin.component';
 import { InicioArtistasComponent } from './inicio-artistas/inicio-artistas.component';
 import { InicioEmpresasComponent } from './inicio-empresas/inicio-empresas.component';
+import { ArtistListComponent } from './artist-list/artist-list.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
 {path :"inicio-admin", component:InicioAdminComponent},
 {path :"inicio-artistas", component:InicioArtistasComponent},
 {path :"inicio-empresas", component:InicioEmpresasComponent},
+{path :"lista-artistas", component:ArtistListComponent},
 
 ];
 
