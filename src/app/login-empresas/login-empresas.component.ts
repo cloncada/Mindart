@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup  } from '@angular/forms';
 import { dashCaseToCamelCase } from '@angular/compiler/src/util';
 import {CompaniesServicesService} from '../services/companies-services.service';
-import { Location, } from '@angular/common';=======
-import { Location } from '@angular/common';
+import { Location, } from '@angular/common';
 
 
 
@@ -41,8 +40,6 @@ export class LoginEmpresasComponent implements OnInit {
       this.location.go("/inicio-empresas"),
 
         window.location.reload();
-
-  }); 
 
       this.company=data;
       let value = "1";
