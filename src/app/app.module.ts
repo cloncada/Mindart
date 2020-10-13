@@ -57,7 +57,7 @@ import { SubirArchivoComponent } from './subir-archivo/subir-archivo.component';
     InicioEmpresasComponent,
     InicioAdminComponent,
 
-    ArtistListComponent
+    ArtistListComponent,
 
     SubirArchivoComponent,
 
