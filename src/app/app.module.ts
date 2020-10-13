@@ -31,8 +31,13 @@ import { InicioArtistasComponent } from './inicio-artistas/inicio-artistas.compo
 import { InicioEmpresasComponent } from './inicio-empresas/inicio-empresas.component';
 import { InicioAdminComponent } from './inicio-admin/inicio-admin.component';
 import { NotificacionesComponent } from './notificaciones/notificaciones.component';
+
 import { ArtistListComponent } from './artist-list/artist-list.component';
 import {MatTableModule} from '@angular/material/table';
+
+import { SubirArchivoComponent } from './subir-archivo/subir-archivo.component';
+
+
 
 @NgModule({
   declarations: [
@@ -51,8 +56,11 @@ import {MatTableModule} from '@angular/material/table';
     InicioArtistasComponent,
     InicioEmpresasComponent,
     InicioAdminComponent,
-    NotificacionesComponent,
+
     ArtistListComponent
+
+    SubirArchivoComponent,
+
   ],
   imports: [
     BrowserModule,
