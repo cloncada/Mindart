@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
 import { MatDialog } from '@angular/material/dialog';
 import { NotificacionesComponent } from '../notificaciones/notificaciones.component';
+import { FormProyectoComponent } from '../form-proyecto/form-proyecto.component';
 
 
 
@@ -28,10 +29,14 @@ onUpload(){
   openImagen(){
  
   }
-  /*openArtistas(){
-    this.dialog.open(ini);
-  }*/
-  profileImg="./assets/Photos/Perfil-Empresa.jpg";
+
+  profileBusinessImg="./assets/Photos/Perfil-Empresa.jpg";
+
+  NewProyecto(){
+  this.dialog.open(FormProyectoComponent);
+  }
   
 }
+
+
 

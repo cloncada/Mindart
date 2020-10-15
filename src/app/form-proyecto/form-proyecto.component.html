@@ -1,0 +1,21 @@
+<!--FORMULARIO AGREGACIÓN PROYECTO-->
+<form class="container" [formGroup]="proyectoForm">
+    <p class ="Titulo"><b>NUEVO PROYECTO</b></p>
+    <!--INPUT NOMBRE-->
+    <mat-form-field>
+        <input matInput placeholder="Nombre proyecto" formControlName="Nombre_Proyecto">
+    </mat-form-field>
+    <!--INPUT DESCRIPCIÓN-->
+    <mat-form-field>
+        <textarea matInput placeholder="Descripción" formControlName="Descripcion_Proyecto"></textarea> 
+    </mat-form-field>    
+    <!--CHECKBOX-->
+    <div>
+        <mat-checkbox class="checkbox" formControlName="Doblaje">Actor de doblaje </mat-checkbox>
+        <mat-checkbox class="checkbox"formControlName="Dibujante">Dibujante </mat-checkbox>
+        <mat-checkbox class="checkbox" formControlName="Locutor">Locutor </mat-checkbox>
+    </div>
+</form>
+<!--BOTON CREAR PROYECTO-->
+<button type="submit" mat-raised-button class="btnCrear" color="primary" [disabled]="proyectoForm.invalid">CREAR PROYECTO</button>
+
