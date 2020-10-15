@@ -1,49 +1,66 @@
+/*ESTILOS TOOLBAR*/
 .arriba{
-    background: white;
-    margin-top: 10px;
+  background: white;
+  margin-top: 10px;
   margin-bottom: 10px;
   margin-right: 10px;
-}
-.perfil{
-    text-align: center;
-    font-size: 80%;
-    color:#37474F;    
-}
-
-.imgRedonda {
-    width:130px;
-    height: 130px;
-    border-radius:160px;
-    border:6px solid #03A9F4;
-    text-align:center;
-    
-    
 }
 
 .btn2{
   margin-top: 10px;
   margin-bottom: 10px;
   margin-right: 10px;
-}
-.boton_notificaciones{
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-right: 10px;
+  }
+
+  .boton_notificaciones{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+  
+
+/*ESTILOS FOTO PERFIL*/
+.imgRedonda {
+  width: 130px;
+  height: 130px;
+  border-radius:160px;
+  border:6px solid #03A9F4;
+  display:block;
+  margin:auto;
 }
 
+/*ESTILOS BOTON EDITAR FOTO*/
+.editBtn{
+  position: relative;
+  bottom: 40px;
+  margin-left: 54%;
+  color:#37474F;  
+}
+
+/*ESTILOS NOMBRE DE EMPRESA*/
+.nombre{
+  text-align: center;
+  font-size: 80;
+  color:#37474F;  
+}
+
+
+/*ESTILOS TITULO "MIS PROYECTOS"*/
 .Titulos{
-    font-size: 50;
-    padding-left:10px;
-    color: #616161;
+  font-size: 50;
+  color: #616161;
+  text-align: center;
 }
 
+/*ESTILOS LINEA DIVISORA*/
 .Linea{
-    height: 12px;
-    border: 0;
-    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
-    margin: 20px 10px 5px;
+  height: 12px;
+  border: 0;
+  box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+  margin: 20px 10px 5px;
 }
 
+/*ESTILOS BOTON NUEVO PROYECTO*/
 .BtnNuevoP{
   margin-left: 75%;
   margin-right: 2%;
@@ -51,12 +68,19 @@
   color: white;
 }
 
+/*ESTILOS TARJETAS PROYECTOS*/
 .proyectos{
-  border-width: 1px;
-  padding: 8%;
-  background: #EEEEEE;
-  width: 20%;
-  margin-left: 10px;
-  text-align: center;
-  color: #616161;
+  display: flex;
+  flex-direction: row;
 }
+
+.proyecto-card {
+max-width: 400px;
+margin: 20px;
+background:  #EEEEEE;
+}
+.proyecto-card p{
+text-align: justify;
+}
+
+

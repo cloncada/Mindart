@@ -1,0 +1,31 @@
+/*ESTILOS FORMULARIO*/
+.container{
+    display:flex;
+    flex-direction: column;
+  }
+  
+  .container > * {
+  width: 100%;
+  }
+  
+/*ESILOS TITULO "NUEVO PROYECTO"*/
+.Titulo{
+    font-size: 50;
+    color: #616161;
+    text-align: center;
+}
+
+/*ESTILOS CHECKBOX*/
+.checkbox {
+    margin: 0 12px;
+    align-items:center ;
+  }
+
+/*ESTILOS BOTON CREAR PROYECTO*/
+.btnCrear{
+    margin-top: 8%;
+    size: 20%;
+    align-items: center;
+    margin-left: 30%;
+    color: white;
+}

@@ -31,11 +31,12 @@ import { InicioArtistasComponent } from './inicio-artistas/inicio-artistas.compo
 import { InicioEmpresasComponent } from './inicio-empresas/inicio-empresas.component';
 import { InicioAdminComponent } from './inicio-admin/inicio-admin.component';
 import { NotificacionesComponent } from './notificaciones/notificaciones.component';
-
+import {MatCheckboxModule} from '@angular/material/checkbox'
 import { ArtistListComponent } from './artist-list/artist-list.component';
 import {MatTableModule} from '@angular/material/table';
 
 import { SubirArchivoComponent } from './subir-archivo/subir-archivo.component';
+import { FormProyectoComponent } from './form-proyecto/form-proyecto.component';
 
 
 
@@ -61,6 +62,8 @@ import { SubirArchivoComponent } from './subir-archivo/subir-archivo.component';
 
     SubirArchivoComponent,
 
+    FormProyectoComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -70,6 +73,7 @@ import { SubirArchivoComponent } from './subir-archivo/subir-archivo.component';
     MatButtonModule,
     MatIconModule,
     MatCardModule,
+    MatCheckboxModule,
     MatDialogModule,
     MatInputModule,
     MatFormFieldModule,
