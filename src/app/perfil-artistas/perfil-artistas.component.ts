@@ -4,7 +4,8 @@ import { LoginComponent } from '../login/login.component';
 import { MatDialog } from '@angular/material/dialog';
 import { NotificacionesComponent } from '../notificaciones/notificaciones.component';
 import { SubirArchivoComponent } from '../subir-archivo/subir-archivo.component';
-
+import { HttpResponse, HttpEventType } from '@angular/common/http';
+import { UploapServicesService} from '../services/uploap-services.service';
 
 
 @Component({
@@ -23,7 +24,7 @@ onUpload(){
   idArtista= localStorage.getItem("idArtista");
   emailArtistas=localStorage.getItem("emailArtistas");
   
-  constructor(private app:AppComponent, public dialog: MatDialog,
+  constructor(private app:AppComponent, public dialog: MatDialog, 
     
    ) { }
 
@@ -51,4 +52,5 @@ onUpload(){
       }
     }
   }
+ 
 }

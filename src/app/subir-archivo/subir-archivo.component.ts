@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { HttpResponse, HttpEventType } from '@angular/common/http';
+import { UploapServicesService} from '../services/uploap-services.service';
 
 
 @Component({
@@ -16,8 +18,12 @@ export class SubirArchivoComponent implements OnInit {
     idPost: new FormControl('',[Validators.required]),
   });
   hide=true;
-
-  constructor() { }
+  selectedFiles: FileList;
+  currentFileUpload: File;
+  progress: { percentage: number } = { percentage: 0 };
+  selectedFile = null;
+  changeImage = false;
+  constructor(private uploadService: UploapServicesService,) { }
 
   ngOnInit(): void {
   }
@@ -38,6 +44,23 @@ export class SubirArchivoComponent implements OnInit {
   onSubmit(){
     console.log(this.datosarchivo.value);
     
+  }
+  upload() {
+    console.log("duvancho")
+    this.progress.percentage = 0;
+
+    this.currentFileUpload = this.selectedFiles.item(0);
+    this.uploadService.pushFileToStorage(this.currentFileUpload).subscribe(event => {
+      if (event.type === HttpEventType.UploadProgress) {
+        this.progress.percentage = Math.round(100 * event.loaded / event.total);
+      } else if (event instanceof HttpResponse) {
+        alert('File Successfully Uploaded');  
+      }
+    
+
+    this.selectedFiles = undefined;
+      }
+    );
   }
 
 }
