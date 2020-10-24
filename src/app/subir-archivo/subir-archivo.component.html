@@ -11,7 +11,7 @@
         <div class="container-input-file">
             <label class="custom-file">
                 <!--img [src]="url" height="200"><br-->
-                <input type="file" accept=".png, .jpg, .jpeg" formControlName="imagePost" (change)="handleImage($event)"/>
+                <input type="file" id="customFile" accept=".png, .jpg, .jpeg"  (change)="selectFile($event)"/>
                 <mat-icon>cloud_upload</mat-icon><span>CHOOSE IMAGE</span>
             </label>
         </div>
