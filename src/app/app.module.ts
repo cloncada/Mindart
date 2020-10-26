@@ -39,6 +39,10 @@ import { SubirArchivoComponent } from './subir-archivo/subir-archivo.component';
 import { FormProyectoComponent } from './form-proyecto/form-proyecto.component';
 
 
+//Firebase 
+import { environment } from '../environments/environment';
+import {AngularFireModule} from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -57,11 +61,8 @@ import { FormProyectoComponent } from './form-proyecto/form-proyecto.component';
     InicioArtistasComponent,
     InicioEmpresasComponent,
     InicioAdminComponent,
-
     ArtistListComponent,
-
     SubirArchivoComponent,
-
     FormProyectoComponent,
 
   ],
@@ -69,6 +70,8 @@ import { FormProyectoComponent } from './form-proyecto/form-proyecto.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.configFirebase), //Inicializamos conexión a Firesbase
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
@@ -85,7 +88,6 @@ import { FormProyectoComponent } from './form-proyecto/form-proyecto.component';
     MatTableModule,
   ],
   entryComponents: [LoginComponent,SigninComponent,EmpresasComponent],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
