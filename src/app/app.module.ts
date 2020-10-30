@@ -43,6 +43,7 @@ import { FormProyectoComponent } from './form-proyecto/form-proyecto.component';
 import { environment } from '../environments/environment';
 import {AngularFireModule} from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularFirestoreModule,
+    AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.configFirebase), //Inicializamos conexión a Firesbase
     MatToolbarModule,
     MatButtonModule,
