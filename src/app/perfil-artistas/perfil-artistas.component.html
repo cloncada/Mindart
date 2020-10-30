@@ -32,4 +32,13 @@
   <div>
     <button class="BtnNuevoP" (click)="openArchivo()" mat-raised-button>SUBIR ARCHIVO</button>
   </div>
+  <div class="form-group">
+    <h5>SELECCIONAR IMAGEN</h5>
+    <input type="file" accept=".png, .jpg" (change)="onUpload($event)">
+  </div>
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+    [style.width]="(uploadPercent | async) + '%'">
+    </div>
+  </div>
   <hr class="Linea">
