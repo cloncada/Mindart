@@ -1,16 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatCardModule} from '@angular/material/card';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSelectModule} from '@angular/material/select';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { HttpClientModule} from '@angular/common/http';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -31,18 +31,21 @@ import { InicioArtistasComponent } from './inicio-artistas/inicio-artistas.compo
 import { InicioEmpresasComponent } from './inicio-empresas/inicio-empresas.component';
 import { InicioAdminComponent } from './inicio-admin/inicio-admin.component';
 import { NotificacionesComponent } from './notificaciones/notificaciones.component';
-import {MatCheckboxModule} from '@angular/material/checkbox'
+import { MatCheckboxModule } from '@angular/material/checkbox'
 import { ArtistListComponent } from './artist-list/artist-list.component';
-import {MatTableModule} from '@angular/material/table';
-
+import { MatTableModule } from '@angular/material/table';
 import { SubirArchivoComponent } from './subir-archivo/subir-archivo.component';
-import { FormProyectoComponent } from './form-proyecto/form-proyecto.component';
-
+import { PostempComponent } from './postemp/postemp.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatDividerModule } from '@angular/material/divider';
 
 //Firebase 
 import { environment } from '../environments/environment';
-import {AngularFireModule} from '@angular/fire';
+import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { PostEmpresasComponent } from './post-empresas/post-empresas.component';
+
 
 @NgModule({
   declarations: [
@@ -63,7 +66,9 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     InicioAdminComponent,
     ArtistListComponent,
     SubirArchivoComponent,
-    FormProyectoComponent,
+    PostempComponent,
+    PostEmpresasComponent,
+    
 
   ],
   imports: [
@@ -81,13 +86,17 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
-    FormsModule, 
+    FormsModule,  
     ReactiveFormsModule,
     MatGridListModule,
     HttpClientModule,
     MatTableModule,
+    MatProgressSpinnerModule,
+    MatDividerModule,
+    MatChipsModule,
   ],
-  entryComponents: [LoginComponent,SigninComponent,EmpresasComponent],
+  providers:[],
+  entryComponents: [LoginComponent,SigninComponent,EmpresasComponent,PostEmpresasComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -61,26 +61,71 @@
 }
 
 /*ESTILOS BOTON NUEVO PROYECTO*/
+.container-btn-new{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin: 1rem -0.6rem;
+}
 .BtnNuevoP{
-  margin-left: 75%;
-  margin-right: 2%;
   background: #2E7D32;
   color: white;
 }
 
 /*ESTILOS TARJETAS PROYECTOS*/
 .proyectos{
-  display: flex;
-  flex-direction: row;
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: 24% 24% 24% 24%;
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+  justify-content: center;
 }
 
 .proyecto-card {
-max-width: 400px;
-margin: 20px;
-background:  #EEEEEE;
+  max-width: 400px;
+  margin: 20px;
+  background:  #EEEEEE;
+  border-radius: 5px;
 }
 .proyecto-card p{
-text-align: justify;
+  text-align: justify;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
+.mat-card-actions{
+  text-align: right;
+}
+
+.mat-card-header{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.mat-chip{
+  min-height: 1rem;
+  padding: 9px;
+  background:#FFA726 !important;
+}
+
+
+/*ESTILOS BOTON VER POST "OJO"*/
+.btnver{
+  color:#616161;
+}
+
+/*ESTILOS SPINNER CARGA PROYECTOS*/
+.proyectos-spinner{
+  margin-top: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 
 
