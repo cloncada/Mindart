@@ -11,9 +11,11 @@ import { InicioArtistasComponent } from './inicio-artistas/inicio-artistas.compo
 import { InicioEmpresasComponent } from './inicio-empresas/inicio-empresas.component';
 import { ArtistListComponent } from './artist-list/artist-list.component';
 import { EditarArtistaComponent } from './editar-artista/editar-artista.component';
+import { PostempComponent } from './postemp/postemp.component';
 
 
 const routes: Routes = [
+{path : '', redirectTo: '/artistas', pathMatch:'full'},
 {path :"artistas", component: InicioComponent},
 {path :"empresas", component: EmpresasComponent},
 {path :"info", component:InfoComponent},
@@ -27,9 +29,10 @@ const routes: Routes = [
 { path: 'login', loadChildren: () => import('./auth/login/login.module').then(m => m.LoginModule) },
 { path: 'register', loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule) },
 {path:'',redirectTo:'/artistas',pathMatch:'full'},
-{path:"editar-artista",component:EditarArtistaComponent}
+{path:"editar-artista",component:EditarArtistaComponent},
 
 
+{path :"postemp/:id", component: PostempComponent},
 ];
 
 @NgModule({

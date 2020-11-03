@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { NotificacionesComponent } from '../notificaciones/notificaciones.component';
-import { FormProyectoComponent } from '../form-proyecto/form-proyecto.component';
-
-
+import { PostempID, PostempService } from '../services/postemp.service';
+import { PostempI } from '../shared/models/postemp.interface';
+import { Observable } from 'rxjs';
+import Swal from 'sweetalert2';
+import { PostEmpresasComponent } from '../post-empresas/post-empresas.component';
 
 @Component({
   selector: 'app-perfil-empresas',
@@ -12,31 +14,142 @@ import { FormProyectoComponent } from '../form-proyecto/form-proyecto.component'
   styleUrls: ['./perfil-empresas.component.css']
 })
 export class PerfilEmpresasComponent implements OnInit {
-/*selectedFile= null;
-  onfileSelected(event){
-    this.selectedFile= event.target.files[0];
-}
-onUpload(){
-}*/
-  constructor(private app:AppComponent, public dialog: MatDialog) { }
+
+  public postsemp$: Observable<PostempI[]>;
+  profileBusinessImg="./assets/Photos/Perfil-Empresa.jpg";
+  constructor(
+    private app:AppComponent, 
+    private postempSvc:PostempService,
+    private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.app.FalseToolBar();
+    this.postsemp$ = this.postempSvc.getAllPostemp();
   }
-  openInfo(){
+
+  onEdit(postemp?){
+    this.resetForm();
+    this.openModal();
+    if(postemp){
+      this.postempSvc.selected = postemp;
+    }
+  }
+
+
+
+  onDelete(postemp:PostempI){
+    //Alert para borrar un post
+    Swal.fire({
+      title:'¿Seguro que desea eliminar este proyecto?',
+      text:`Esta acción no se podrá revertir`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#0288D1',
+      confirmButtonText: 'Eliminar',
+      cancelButtonColor: '#D32F2F',
+      cancelButtonText: 'Cancelar'
+    }).then(result=> {
+      if(result.value){
+        // Quiere borrar
+        this.postempSvc.deletePostemp(postemp).then(()=>{
+          Swal.fire('Proyecto eliminado','Su proyecto ha sido eliminado con éxito.', 'success')
+        }).catch((error)=>{
+          Swal.fire('Error','Se ha producido un error', 'error')
+        });
+      }
+    });
+  }
+
+  openModal(): void{
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = {
+      title: 'Modal'
+    };
+    dialogConfig.autoFocus = true;
+    this.dialog.open(PostEmpresasComponent, dialogConfig);
+  }
+
+  resetForm(): void{
+    this.postempSvc.selected.titlePost='';
+    this.postempSvc.selected.contentPost='';
+    this.postempSvc.selected.tagsPost='';
+    this.postempSvc.selected.id= null;
+  }
+
+
+
+
+
+/*   openInfo(){
     this.dialog.open(NotificacionesComponent);
   }
-  openImagen(){
+
+
  
+
+  onNewPostemp(){
+  this.dialog.open(FormProyectoComponent)
   }
 
-  profileBusinessImg="./assets/Photos/Perfil-Empresa.jpg";
+/*   onEditPostemp(postemp: PostempI): void {
+    this.openDialog(postemp);
+  } */
 
-  NewProyecto(){
-  this.dialog.open(FormProyectoComponent);
+/*   onEdit(element: PostempID){
+    this.openModal();
+    if(element){
+      this.postempSvc.selected = element;
+    }
   }
+
+  onDeletePostemp(postemp:PostempI){
+//Alert para borrar un post
+    Swal.fire({
+      title:'¿Seguro que desea eliminar este proyecto?',
+      text:`Esta acción no se podrá revertir`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#0288D1',
+      confirmButtonText: 'Eliminar',
+      cancelButtonColor: '#D32F2F',
+      cancelButtonText: 'Cancelar'
+    }).then(result=> {
+      if(result.value){
+        // Quiere borrar
+        this.postempSvc.deletePostempById(postemp).then(()=>{
+          Swal.fire('Proyecto eliminado','Su proyecto ha sido eliminado con éxito.', 'success')
+        }).catch((error)=>{
+          Swal.fire('Error','Se ha producido un error', 'error')
+        });
+      }
+    });
+  }
+   */
+ //* openDialog(postemp?: PostempI): void{
+/*   const config ={
+    data: {
+      message: postemp ? 'EditPostemp' : 'NewPostemp',
+      content: postemp
+    }
+  };
   
-}
+  const dialogRef = this.dialog.open(ModalComponent, config);
+  dialogRef.afterClosed().subscribe(result =>{
+    console.log(`Dialog result ${result}`);
+  });
+  } */
 
+/*   openModal(): void{
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data={
+      title: 'Modal'
+    };
+    dialogConfig.autoFocus = true;
+    this.dialog.open(FormProyectoComponent, dialogConfig);
+
+    }
+  */
+}
+ 
 
 

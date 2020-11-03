@@ -2,9 +2,8 @@
 <mat-toolbar class="arriba">
     <img src="assets\Logos\Mindart.jpeg"> 
     <p class="espacio"></p>
-
     <!--BOTONES PARTE SUPERIOR-->
-    <button mat-button mat-icon-button class="btn2" (click)="openInfo()">
+    <button mat-button mat-icon-button class="btn2">
         <mat-icon>notification_important</mat-icon>
     </button>
     <button mat-button mat-icon-button class="btn3">
@@ -14,6 +13,7 @@
         <mat-icon>home</mat-icon>
     </button>
 </mat-toolbar>
+<mat-divider></mat-divider>&nbsp;
 
 <!--PERFIL-->
 <section>
@@ -29,56 +29,48 @@
 
 
 <!--BOTON NUEVO PROYECTO-->
-<button (click)="NewProyecto()" class="BtnNuevoP" mat-raised-button>
+<div class="container-btn-new">
+  <button class="BtnNuevoP" mat-raised-button (click)="onEdit()">
     NUEVO PROYECTO
     <mat-icon>add_circle_outline</mat-icon>
-</button>
-
-
+  </button>
+</div>
 <hr class="Linea">
 <p class="Titulos"><strong>MIS PROYECTOS</strong></p>
 
 <!--TARJETAS PROYECTOS-->
-<section class="proyectos">
-    <mat-card  class="proyecto-card">
-        <mat-card-header>
-          <mat-card-title>Campaña publicitaria navidad 🎅🏻</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <p>
-            Reconocida empresa de bogotá (REACHING DREAMS), requiere locutores y actores de doblaje para trabajar en campaña 
-            publicitaria de navidad, salario a convenir
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-            <button type="button" mat-icon-button aria-label="Example icon button with a vertical three dot icon" color="primary"> 
-                <mat-icon>edit</mat-icon>
-            </button>
-            <button type="button" mat-icon-button aria-label="Example icon button with a vertical three dot icon" color="warn">
-                <mat-icon>delete</mat-icon>
-            </button>
-        </mat-card-actions>
-      </mat-card>
-    
-      <mat-card  class="proyecto-card">
-        <mat-card-header>
-          <mat-card-title>Campaña publicitaria octubre 🎃</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <p>
-            Reconocida empresa de bogotá (REACHING DREAMS), requiere dibujantes para trabajar en campaña 
-            publicitaria de octubre, salario a convenir
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-            <button type="button" mat-icon-button aria-label="Example icon button with a vertical three dot icon" color="primary"> 
-                <mat-icon>edit</mat-icon>
-            </button>
-            <button type="button" mat-icon-button aria-label="Example icon button with a vertical three dot icon" color="warn">
-                <mat-icon>delete</mat-icon>
-            </button>
-            </mat-card-actions>
-      </mat-card>
+<section class="proyectos" *ngIf="postsemp$ | async as postsemp; else loading">
+  <mat-card  class="proyecto-card" *ngFor="let postemp of postsemp">
+      <mat-card-header>
+          <mat-card-title>{{postemp.titlePost}} </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+         <p> {{postemp.contentPost}} </p>
+         <mat-chip-list>
+          <mat-chip selected *ngFor="let tag of postemp.tagsPost" [ngClass]="tag">
+            {{ tag }}
+          </mat-chip>
+        </mat-chip-list>
+      </mat-card-content>
+      <mat-divider></mat-divider>
+      <mat-card-actions>
+        <button class="btnver" type="button" mat-icon-button aria-label="Example icon button with a vertical three dot icon" [routerLink]= "['/postemp', postemp.id]">
+          <mat-icon>visibility</mat-icon>
+        </button>
+        <button type="button" mat-icon-button aria-label="Example icon button with a vertical three dot icon" color="primary" (click)="onEdit(postemp)"> 
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button type="button" mat-icon-button aria-label="Example icon button with a vertical three dot icon" color="warn" (click)="onDelete(postemp)">
+            <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+  </mat-card>
 </section>
+<!--Spinner carga-->
+<ng-template #loading>
+  <div class="proyectos-spinner">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
   
 
