@@ -2,7 +2,8 @@ import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {ArtistServiceService} from '../services/artist-service.service';
-
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
@@ -20,23 +21,28 @@ export class SigninComponent implements OnInit {
   submitted= false;
   hide = true;
   corazao="<3";
-  constructor(private service: ArtistServiceService) {
+  constructor(private service: ArtistServiceService,private firestore: AngularFirestore) {
   }
 
   ngOnInit(){  
   }
   
-
   onSubmit(){
+    return new Promise<any>((resolve, reject) =>{
+      this.firestore
+          .collection("artistas")
+          .add(this.datos.value)
+          .then(res => {}, err => reject(err));
+          this.submitted=true;
+          
+  });
      
-      console.log(this.datos.value);
+      /*console.log(this.datos.value);
       this.service.addArtist("http://localhost:8080/addArtist", this.datos.value).subscribe(data=>{
         alert("Usuario creado con exito...!");
       }); 
-      this.submitted=true;
+      this.submitted=true;*/
   }
-
-  
       
 
 }   

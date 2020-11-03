@@ -10,6 +10,7 @@ import { InicioAdminComponent } from './inicio-admin/inicio-admin.component';
 import { InicioArtistasComponent } from './inicio-artistas/inicio-artistas.component';
 import { InicioEmpresasComponent } from './inicio-empresas/inicio-empresas.component';
 import { ArtistListComponent } from './artist-list/artist-list.component';
+import { EditarArtistaComponent } from './editar-artista/editar-artista.component';
 import { PostempComponent } from './postemp/postemp.component';
 
 
@@ -25,6 +26,12 @@ const routes: Routes = [
 {path :"inicio-artistas", component:InicioArtistasComponent},
 {path :"inicio-empresas", component:InicioEmpresasComponent},
 {path :"lista-artistas", component:ArtistListComponent},
+{ path: 'login', loadChildren: () => import('./auth/login/login.module').then(m => m.LoginModule) },
+{ path: 'register', loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule) },
+{path:'',redirectTo:'/artistas',pathMatch:'full'},
+{path:"editar-artista",component:EditarArtistaComponent},
+
+
 {path :"postemp/:id", component: PostempComponent},
 ];
 

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "mindart-76546": {
+      "hosting": {
+        "app": [
+          "mindart-76546"
+        ]
+      }
+    }
+  }
+}

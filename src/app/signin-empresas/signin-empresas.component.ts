@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { dashCaseToCamelCase } from '@angular/compiler/src/util';
 import {CompaniesServicesService} from '../services/companies-services.service';
-
+import { AngularFirestore } from '@angular/fire/firestore';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class SigninEmpresasComponent implements OnInit {
 
   email = new FormControl('', [Validators.required, Validators.email]);
 
-  constructor(private service: CompaniesServicesService) {
+  constructor(private service: CompaniesServicesService,private firestore: AngularFirestore) {
   }
   ngOnInit(): void {
   }
@@ -34,11 +34,21 @@ export class SigninEmpresasComponent implements OnInit {
 
   onSubmit(){
 
-    console.log(this.datosCompanies.value);
+    return new Promise<any>((resolve, reject) =>{
+      this.firestore
+          .collection("empresas")
+          .add(this.datosCompanies.value)
+          .then(res => {}, err => reject(err));
+         alert("empresa registrada con exito")
+          
+  });
+    
+
+  /*  console.log(this.datosCompanies.value);
     this.service.addCompany("http://localhost:8080/addCompany", this.datosCompanies.value).subscribe(data=>{
       alert("Usuario creado con exito...!");
     });
-
+*/
 
 }
 }

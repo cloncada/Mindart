@@ -46,6 +46,11 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { PostEmpresasComponent } from './post-empresas/post-empresas.component';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { NavbarComponent } from './general/navbar/navbar.component';  
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import { NavbarEmpresasComponent } from './general/navbar-empresas/navbar-empresas.component';
+import { NavbarInicioArtistaComponent } from './general/navbar-inicio-artista/navbar-inicio-artista.component';
+import { EditarArtistaComponent } from './editar-artista/editar-artista.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +71,11 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     InicioAdminComponent,
     ArtistListComponent,
     SubirArchivoComponent,
+    
+    NavbarComponent,
+    NavbarEmpresasComponent,
+    NavbarInicioArtistaComponent,
+    EditarArtistaComponent,
     PostempComponent,
     PostEmpresasComponent,
     
@@ -92,6 +102,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     MatGridListModule,
     HttpClientModule,
     MatTableModule,
+    AngularFireAuthModule,
     MatProgressSpinnerModule,
     MatDividerModule,
     MatChipsModule,

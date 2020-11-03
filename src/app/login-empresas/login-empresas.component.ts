@@ -3,7 +3,8 @@ import { FormControl, Validators, FormGroup  } from '@angular/forms';
 import { dashCaseToCamelCase } from '@angular/compiler/src/util';
 import {CompaniesServicesService} from '../services/companies-services.service';
 import { Location, } from '@angular/common';
-
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class LoginEmpresasComponent implements OnInit {
 
 
   constructor(private service: CompaniesServicesService,
-    private location: Location) {
+    private location: Location, private firestore: AngularFirestore,private router: Router) {
 
   }
 
@@ -32,28 +33,28 @@ export class LoginEmpresasComponent implements OnInit {
   }
 
   onSubmitLogin(){
-    this.service.loginCompany("http://localhost:8080/login/company", this.datosLogin.value).subscribe(data=>{
+    this.firestore.collection("empresas", ref => ref.where("email", "==", this.datosLogin.value.email)).valueChanges().subscribe(posts => {
+      this.company = posts as string[];
+      this.company = this.company[0];
+      if (this.company === undefined) {
+        alert("usaurio  erroneo")
+      } else { 
+        if(this.company.password!=this.datosLogin.value.password){
 
-    this.location.go("/perfil-artistas"),
-    window.location.reload();
+          alert("usaurio o contraseña erroneos")
+        }
+        else{
 
-      this.location.go("/inicio-empresas"),
-
-        window.location.reload();
-
-      this.company=data;
-      let value = "1";
-      localStorage.setItem("vista", value);
-      window.location.reload();
-      localStorage.setItem("idCompany", this.company.id);
-      localStorage.setItem("emailCompany", this.company.email);
-    
+          this.router.navigate(["inicio-empresas"]);
+        }
+        
       
-  }, (error) => {
-    alert("Usuario y contraseña no coinciden");
-    
-  });
+      }
 
-}
+
+    });
+    
+
+  }
  
 }

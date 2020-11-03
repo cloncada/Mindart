@@ -23,13 +23,7 @@ export class ArtistListComponent implements OnInit {
   constructor(private service: ArtistServiceService) { }
   artists: any[];
   ngOnInit(): void {
-    this.service.getArtists("http://localhost:8080/Artist").subscribe((res: any) => {
-     
-      this.artists = JSON.parse(JSON.stringify(res));
-      this.dataSource = new MatTableDataSource(this.artists);
-    console.log(this.artists);
-
-    });
+    
   }
 
 
