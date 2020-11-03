@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src="assets\Logos\Mindart.jpeg"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="openInfo()">Info</button>
+    <div class="collapse navbar-collapse" id="navbarColor03">
+      <ul class="navbar-nav mr-auto">
+      
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        
+        <button mat-raised-button (click)="openDialogsignin()" color="accent">Log in</button>
+        <button mat-raised-button (click)="openDialog()"  color="primary">Sign in</button>       
+        <div class="btn-group">
+          <button type="button" class="btn btn-outline-warning" data-toggle="dropdown">Empresas</button>
+          <button type="button" class="btn btn-outline-warning   dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" (click)="inicioArtistas()" >Artistas</a>
+            
+          </div>
+        </div>
+      </form>
+    </div>
+  </nav>

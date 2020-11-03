@@ -6,7 +6,9 @@
     <a mat-button (click)="openInfo()">Info</a>
     <a mat-button routerLink="empresas" (click)="show=!show" *ngIf="show">Empresas</a>
     <a mat-button routerLink="artistas" (click)="show=!show" *ngIf="!show" >Artistas</a>
+    
     <div>
+        
         <button mat-raised-button (click)="openDialog()" *ngIf="show" color="primary">Log in</button>
         <button mat-raised-button (click)="openDialogempresas()" *ngIf="!show" color="accent">Log in</button>
         <button mat-raised-button (click)="openDialogsignin()" *ngIf="show" color="warn">Sign in</button>

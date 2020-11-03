@@ -1,31 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-
+import {auth} from 'firebase/app'
+import {AngularFireAuth} from '@angular/fire/auth';
 @Injectable({
   providedIn: 'root'
 })
 
 export class ArtistServiceService {
-
-  constructor(private http: HttpClient) { }
-
-  addArtist (Url: string, artista: any){
-
-       return this.http.post(Url, artista);
-
-  }
-  loginArtist (Url: string, logartista: any){
-
-    return this.http.post(Url, logartista);
-  }
-
-  getArtists(Url:string){
-
-return this.http.get(Url);
-
-  }
-
-
+constructor(public afAuth:AngularFireAuth){}
+   async login(email:string,password:string){
+const result =await this.afAuth.useEmulator;
+return result;
+   }
 
 }

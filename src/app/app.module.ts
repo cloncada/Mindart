@@ -44,6 +44,11 @@ import { environment } from '../environments/environment';
 import {AngularFireModule} from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { NavbarComponent } from './general/navbar/navbar.component';  
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import { NavbarEmpresasComponent } from './general/navbar-empresas/navbar-empresas.component';
+import { NavbarInicioArtistaComponent } from './general/navbar-inicio-artista/navbar-inicio-artista.component';
+import { EditarArtistaComponent } from './editar-artista/editar-artista.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +70,10 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     ArtistListComponent,
     SubirArchivoComponent,
     FormProyectoComponent,
+    NavbarComponent,
+    NavbarEmpresasComponent,
+    NavbarInicioArtistaComponent,
+    EditarArtistaComponent,
 
   ],
   imports: [
@@ -88,6 +97,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     MatGridListModule,
     HttpClientModule,
     MatTableModule,
+    AngularFireAuthModule
   ],
   entryComponents: [LoginComponent,SigninComponent,EmpresasComponent],
   bootstrap: [AppComponent]
