@@ -12,9 +12,11 @@ import { InicioEmpresasComponent } from './inicio-empresas/inicio-empresas.compo
 import { ArtistListComponent } from './artist-list/artist-list.component';
 import { EditarArtistaComponent } from './editar-artista/editar-artista.component';
 import { PostempComponent } from './postemp/postemp.component';
+import { PostartistaComponent } from './postartista/postartista/postartista.component';
 
 
 const routes: Routes = [
+{path : '', redirectTo: '/empresas', pathMatch:'full'},
 {path : '', redirectTo: '/artistas', pathMatch:'full'},
 {path :"artistas", component: InicioComponent},
 {path :"empresas", component: EmpresasComponent},
@@ -33,6 +35,7 @@ const routes: Routes = [
 
 
 {path :"postemp/:id", component: PostempComponent},
+{path : "postartista/:id", component: PostartistaComponent},
 ];
 
 @NgModule({

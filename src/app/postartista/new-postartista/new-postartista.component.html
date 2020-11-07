@@ -1,0 +1,21 @@
+<div class="archivo">
+    <form class="formulario" [formGroup]="newPostForm" (ngSubmit)="addNewPost(newPostForm.value)" >
+        <mat-form-field>
+            <mat-label class="titulo">TITULO</mat-label>
+            <input matInput placeholder="Titulo" formControlName="titlePost" name="titlePost" [(ngModel)]="this.postSvc.selected.titlePost">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>CONTENIDO</mat-label>
+            <input matInput placeholder="Contenido" formControlName="contentPost" name="contentPost" [(ngModel)]="this.postSvc.selected.contentPost">
+        </mat-form-field>
+        <div class="container-input-file">
+            <label class="custom-file">
+                <input type="file" accept=".png, .jpg, .jpeg" formControlName="imagePost" (change)="handleImage($event)"/>
+                <mat-icon>cloud_upload</mat-icon><span>CHOOSE IMAGE</span>
+            </label>
+        </div>
+        <div>
+            <button class="boton1" novalidate mat-raised-button (click)="onSaveForm()">Guardar</button>
+        </div>
+    </form>
+</div>
