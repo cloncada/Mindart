@@ -1,5 +1,5 @@
-<mat-toolbar class="arriba"><div class="perfil-artistas"></div>
-    <img src="assets\Logos\Mindart.jpeg"> 
+<mat-toolbar class="arriba"><div class="perfil-artistas"></div>  
+  <img src="assets\Logos\Mindart.jpeg"> 
     <div class="espacio"></div>
     <p class="espacio"></p>
         <div class="btn2" >
@@ -30,15 +30,39 @@
   <mat-icon>edit</mat-icon>
 </button>
   <div>
-    <button class="BtnNuevoP" (click)="openArchivo()" mat-raised-button>SUBIR ARCHIVO</button>
+    <button mat-stroked-button (click)="onNewPost()" class="BtnNuevoP" mat-raised-button>
+      NUEVO PROYECTO
+      <mat-icon>add_circle_outline</mat-icon>
+    </button>
   </div>
-  <div class="form-group">
-    <h5>SELECCIONAR IMAGEN</h5>
-    <input type="file" accept=".png, .jpg" (change)="onUpload($event)">
-  </div>
-  <div class="progress">
-    <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
-    [style.width]="(uploadPercent | async) + '%'">
-    </div>
-  </div>
+  
+  
   <hr class="Linea">
+  <div class="container" *ngIf="postartista$ | async as postartista; else loading">
+    <mat-card class="postartista-card" *ngFor="let postartista of postartista">
+      <mat-card-header>
+        <mat-card-title> {{postartista.titlePost}} </mat-card-title>
+      </mat-card-header>
+      <img matCardImage [src]="postartista.imagePost"/>
+      <mat-card-content>
+        <p> {{postartista.contentPost}} </p>
+      </mat-card-content>
+      <mat-divider></mat-divider>
+      <mat-card-actions>
+        <button class="btnver" type="button" mat-icon-button aria-label="Example icon button with a vertical three dot icon" [routerLink]= "['/postartista', postartista.id]">
+          <mat-icon>visibility</mat-icon>
+        </button>
+        <button type="button" mat-icon-button aria-label="Example icon button with a vertical three dot icon" color="primary" (click)="onEditPost(postartista)"> 
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button type="button" mat-icon-button aria-label="Example icon button with a vertical three dot icon" color="warn" (click)="onDeletePost(postartista)">
+            <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <ng-template #loading>
+    <div class="container-spinner">
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-template>
