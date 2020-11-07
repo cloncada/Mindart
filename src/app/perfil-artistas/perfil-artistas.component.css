@@ -65,5 +65,58 @@
     margin-left: 54%;
     color:#37474F;  
   }
+  .container{
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: 24% 24% 24% 24%;
+    grid-column-gap: 10px;
+    grid-row-gap: 15px;
+    justify-content: center;
+  }
+  .postartista-card{
+    max-width: 400px;
+    margin: 20px;
+    background:  #EEEEEE;
+    border-radius: 5px;
+    /*background: white;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 150%;*/
+  }
+  /*p.content{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  a{
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+  }*/
+
+  .btnver{
+    color:#616161;
+  }
+
+  .proyecto-card p{
+    text-align: justify;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .mat-card-actions{
+    text-align: right;
+  }
+  
+  .mat-card-header{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+
 
   

@@ -51,6 +51,13 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import { NavbarEmpresasComponent } from './general/navbar-empresas/navbar-empresas.component';
 import { NavbarInicioArtistaComponent } from './general/navbar-inicio-artista/navbar-inicio-artista.component';
 import { EditarArtistaComponent } from './editar-artista/editar-artista.component';
+import { NewPostartistaComponent } from './postartista/new-postartista/new-postartista.component';
+//import { NewPostartistaModule } from './postartista/new-postartista/new-postartista.module';
+import { PostartistaComponent } from './postartista/postartista/postartista.component';
+import { TableComponent } from './postartista/table/table.component';
+import { ModalComponent } from './postartista/modal/modal.component';
+
+
 
 @NgModule({
   declarations: [
@@ -78,6 +85,11 @@ import { EditarArtistaComponent } from './editar-artista/editar-artista.componen
     EditarArtistaComponent,
     PostempComponent,
     PostEmpresasComponent,
+    NewPostartistaComponent,
+    PostartistaComponent,
+    TableComponent,
+    ModalComponent,
+    //NewPostartistaModule,
     
 
   ],
@@ -106,9 +118,10 @@ import { EditarArtistaComponent } from './editar-artista/editar-artista.componen
     MatProgressSpinnerModule,
     MatDividerModule,
     MatChipsModule,
+    //NewPostartistaModule,
   ],
   providers:[],
-  entryComponents: [LoginComponent,SigninComponent,EmpresasComponent,PostEmpresasComponent],
+  entryComponents: [LoginComponent,SigninComponent,EmpresasComponent,PostEmpresasComponent, ModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

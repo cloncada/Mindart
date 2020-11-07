@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import { HttpResponse, HttpEventType } from '@angular/common/http';
 import { UploapServicesService} from '../services/uploap-services.service';
-
+import { PostartistaI} from '../postartista/postartista.interface';
+import { PostartistaService} from '../services/postartista.service';
 
 @Component({
   selector: 'app-subir-archivo',
@@ -23,9 +24,18 @@ export class SubirArchivoComponent implements OnInit {
   progress: { percentage: number } = { percentage: 0 };
   selectedFile = null;
   changeImage = false;
-  constructor(private uploadService: UploapServicesService,) { }
+  constructor(private postSvc: PostartistaService,private uploadService: UploapServicesService,) { }
 
+  /*public newPostForm = new FormGroup({
+    titlePost: new FormControl('',Validators.required),
+    contentPost: new FormControl('',Validators.required),
+    imagePost: new FormControl('',Validators.required),
+  })*/
   ngOnInit(): void {
+  }
+
+  addNewPost(data: PostartistaI){
+    console.log('New Post', data);
   }
 
   /*url="";*/
@@ -41,10 +51,10 @@ export class SubirArchivoComponent implements OnInit {
     }*/
   }
 
-  onSubmit(){
+  /*onSubmit(){
     console.log(this.datosarchivo.value);
     
-  }
+  }*/
   upload() {
     console.log("duvancho")
     this.progress.percentage = 0;
