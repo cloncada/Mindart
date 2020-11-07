@@ -54,7 +54,7 @@ import { EditarArtistaComponent } from './editar-artista/editar-artista.componen
 import { NewPostartistaComponent } from './postartista/new-postartista/new-postartista.component';
 //import { NewPostartistaModule } from './postartista/new-postartista/new-postartista.module';
 import { PostartistaComponent } from './postartista/postartista/postartista.component';
-import { TableComponent } from './postartista/table/table.component';
+//import { TableComponent } from './postartista/table/table.component';
 import { ModalComponent } from './postartista/modal/modal.component';
 
 
@@ -87,7 +87,7 @@ import { ModalComponent } from './postartista/modal/modal.component';
     PostEmpresasComponent,
     NewPostartistaComponent,
     PostartistaComponent,
-    TableComponent,
+    //TableComponent,
     ModalComponent,
     //NewPostartistaModule,
     

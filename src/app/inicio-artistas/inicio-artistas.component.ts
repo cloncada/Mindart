@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from '../app.component';
+import {PostempService } from '../services/postemp.service';
+import { MatDialog} from '@angular/material/dialog';
+import { PostempI } from '../shared/models/postemp.interface';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-inicio-artistas',
@@ -7,9 +13,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioArtistasComponent implements OnInit {
 
-  constructor() { }
+  public postsemp$: Observable<PostempI[]>;
+  constructor(
+    private app:AppComponent, 
+    private postempSvc:PostempService,
+    private dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.app.FalseToolBar();
+    this.postsemp$ = this.postempSvc.getAllPostemp();
   }
 
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PostartistaI} from '../postartista/postartista.interface';
+import { Observable } from 'rxjs';
+import { PostartistaService} from '../services/postartista.service';
 
 @Component({
   selector: 'app-inicio-empresas',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioEmpresasComponent implements OnInit {
 
-  constructor() { }
+  public postartista$: Observable<PostartistaI[]>;
+
+  constructor(public postSvc:PostartistaService) { }
 
   ngOnInit(): void {
+    this.postartista$= this.postSvc.getAllPosts();
+
   }
 
 }

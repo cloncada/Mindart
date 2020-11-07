@@ -1,6 +1,37 @@
 .btn5{
-    color: black;
-    margin-top: -50px;
+  color: black;
+  margin-top: -50px;
   margin-bottom: 10px;
   margin-right: 10px;
+}
+.Titulos{
+  color: #616161;
+  text-align: center;
+}
+.Titulo{
+  
+  font-size: large  ;
+}
+.proyectos{
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: 24% 24% 24% 24%;
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+  justify-content: center;
+}
+.proyecto-card {
+  max-width: 400px;
+  margin: 20px;
+  background:  #EEEEEE;
+  border-radius: 5px;
+}
+
+.aplicar{
+  color:  #013283;
+  border: black;
+}
+
+.espacio{
+  color: #EEEEEE;
 }
