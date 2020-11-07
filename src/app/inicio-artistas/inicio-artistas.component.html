@@ -1,5 +1,5 @@
 <app-navbar-inicio-artista></app-navbar-inicio-artista>
-<p class="Titulos"><strong>PROYECTOS DISPONIBLES</strong></p>
+<p class="Titulos"><strong class="Titulo">PROYECTOS DISPONIBLES</strong></p>
 <section class="proyectos" *ngIf="postsemp$ | async as postsemp; else loading">
   <mat-card  class="proyecto-card" *ngFor="let postemp of postsemp">
       <mat-card-header>
@@ -16,7 +16,7 @@
       <mat-divider></mat-divider>
       <div class="espacio">espacio</div>
       <button class="aplicar">
-        <mat-icon>pan_tool</mat-icon>
+        <mat-icon>color_lens</mat-icon>
       </button>
   </mat-card>
 </section>

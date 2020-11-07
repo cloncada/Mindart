@@ -4,3 +4,27 @@
   margin-bottom: 10px;
   margin-right: 10px;
 }
+.container{
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: 24% 24% 24% 24%;
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+  justify-content: left ;
+}
+.postartista-card {
+  max-width: 400px;
+  margin: 20px;
+  background:  #EEEEEE;
+  border-radius: 5px;
+  align-items: right ;
+}
+
+.espacio{
+  color: #EEEEEE;
+}
+
+.interes{
+  color:  #013283;
+  border: black;
+}
