@@ -17,7 +17,8 @@ private image:any;
 newPostForm = new FormGroup({
   titlePost: new FormControl('', [Validators.required]),
   contentPost: new FormControl('', [Validators.required]),
-  imagePost: new FormControl('', [Validators.required]), 
+  imagePost: new FormControl('', [Validators.required]),
+  tagsPost: new FormControl('', [Validators.required]), 
  });
 postartistaForm: FormGroup
   constructor(
@@ -40,6 +41,8 @@ postartistaForm: FormGroup
       let newPostSvc={
         titlePost: this.postSvc.selected.titlePost,
         contentPost: this.postSvc.selected.contentPost,
+        tagsPost: this.postSvc.selected.tagsPost,
+        registra: this.postSvc.nombreArtista
       }
       Swal.fire('Proyecto publicado', 'Su proyecto se ha publicado con éxito', 'success' )
     }else{

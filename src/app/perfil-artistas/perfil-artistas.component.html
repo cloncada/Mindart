@@ -21,7 +21,7 @@
             </div>
     </mat-toolbar>
     <div class="Texto">
-        <h3> CAMILO ERNESTO </h3>
+        <h3 id="nombreArt"> CAMILO ERNESTO </h3>
     </div>
     <div class="perfil">
     <img class="imgRedonda" src="assets\Photos\perfil.jpg" width="80px" >
@@ -46,6 +46,11 @@
       <img matCardImage [src]="postartista.imagePost"/>
       <mat-card-content>
         <p> {{postartista.contentPost}} </p>
+        <mat-chip-list>
+          <mat-chip selected *ngFor="let tag of postartista.tagsPost" [ngClass]="tag">
+            {{tag}}
+          </mat-chip>
+        </mat-chip-list>
       </mat-card-content>
       <mat-divider></mat-divider>
       <mat-card-actions>

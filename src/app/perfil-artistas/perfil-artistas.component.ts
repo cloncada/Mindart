@@ -28,11 +28,7 @@ import { PostartistaID} from '../services/postartista.service';
 })
 export class PerfilArtistasComponent implements OnInit {
 
-
-  /*idArtista= localStorage.getItem("idArtista");
-  emailArtistas=localStorage.getItem("emailArtistas");
-  public name: string;
-  public uploading= false;*/
+  nombre: string='';
   private image: any;
   private imageOriginal: any;
   @Input() post: PostartistaI;
@@ -51,53 +47,50 @@ export class PerfilArtistasComponent implements OnInit {
 
    public editPostForm= new FormGroup({
      id: new FormControl('',Validators.required),
+     nombrePost: new FormControl('',Validators.required),
      titlePost: new FormControl('',Validators.required),
      contentPost: new FormControl('',Validators.required),
+     tagsPost: new FormControl('',Validators.required),
      imagePost: new FormControl('',Validators.required),
    });
    /*uploadPercent: Observable<number>;
    urlImage: Observable<string>;*/
 
   ngOnInit(): void {
-    /*this.image= this.post.imagePost;
-    this.imageOriginal= this.post.imagePost;
-    this.initValuesForm();*/
     this.postartista$= this.postSvc.getAllPosts();
     this.app.FalseToolBar();
+    this.NombArtista();
+    this.postSvc.nombreArtista=this.nombre;
   }
-/*editPost(postartista){
-this.resetForm();
-this.openModal();
-if(postartista){
-this.postSvc.selected=postartista;
-}
-}*/
 
 openModal(): void{
+  this.resetForm();
 const dialogConfig= new MatDialogConfig();
 dialogConfig.data={
   title: 'Modal'
 };
 dialogConfig.autoFocus= true;
-this.dialog.open(ModalComponent, dialogConfig);
+this.dialog.open(NewPostartistaComponent, dialogConfig);
 }
 
 resetForm(): void{
   this.postSvc.selected.titlePost='';
   this.postSvc.selected.contentPost='';
   this.postSvc.selected.id=null;
+  this.postSvc.selected.tagsPost='';
 }
 private initValuesForm(){
     this.editPostForm.patchValue({
       id: this.post.id,
       titlePost: this.post.titlePost,
-      contentPost: this.post.contentPost,        
+      contentPost: this.post.contentPost,
+      tagsPost: this.post.tagsPost,        
     });
   }
   
 
-  onEditPost(postartista){
-    this.resetForm();
+  onEditPost(postartista?){
+    //this.resetForm();
     this.openModal();
     if(postartista){
       this.postSvc.selected= postartista;
@@ -127,8 +120,10 @@ private initValuesForm(){
   }
 
   onNewPost(){
+    //this.resetForm();
     this.openDialog();
   }
+
 
   
 
@@ -145,33 +140,16 @@ private initValuesForm(){
     })
   }
 
-  /*onUpload(e){
-    //console.log('subir', e);
-    const id = Math.random().toString(36).substring(2);
-    const file = e.target.files[0];
-    const filePath = `uploads/profile_${id}`;
-    const ref = this.storage.ref(filePath);
-    const task = this.storage.upload(filePath, file);
-    this.uploadPercent = task.percentageChanges();
-    task.snapshotChanges().pipe(finalize(()=> this.urlImage = ref.getDownloadURL())).subscribe();    
-  }*/
-
 
   openInfo(){
     this.dialog.open(NotificacionesComponent);
   }
 
-  /*url="";
-  onselectFile(e){
-    if(e.target.files){
-      var reader = new FileReader();
-      reader.readAsDataURL(e.target.files[0]);
-      reader.onload=(event:any)=>{
-        this.url=event.target.result;
-        console.log(this.url);
-      }
-    }
-  }*/
+ NombArtista(){
+   var demo=document.getElementById('nombreArt');
+   var ver=demo.innerText;
+   this.nombre=ver;
+ }
  
 }
 

@@ -22,3 +22,12 @@ mat-chip.mat-chip.mat-primary.mat-standard-chip{
     min-height: 1rem;
     padding: 9px;
 }
+.imagen{
+    background: darkorange !important;
+}
+.dibujo{
+    background: darkorange !important;
+}
+.retrato{
+    background: darkorange !important;
+}
