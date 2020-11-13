@@ -16,7 +16,8 @@ export class PostempService {
     id: null,
     titlePost:'',
     contentPost: '',
-    tagsPost: ''
+    tagsPost: '',
+    registra:''
   };
   constructor(private readonly afs: AngularFirestore){
     this.postempCollection = afs.collection<PostempI>('postemp');

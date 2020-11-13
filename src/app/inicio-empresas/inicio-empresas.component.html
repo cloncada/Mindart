@@ -1,7 +1,6 @@
 <app-navbar-inicio-artista></app-navbar-inicio-artista>
 <div class="inicio-empresas">
 
-
 <!--div class="btn5">
     <button  onclick="location.href='http://localhost:4200/empresas'" mat-icon-button aria-label="Example icon button with a vertical three dot icon" >
       <mat-icon>highlight_off</mat-icon>
@@ -19,12 +18,11 @@
       </mat-card-content>
      <mat-divider></mat-divider>
      <div class="espacio">espacio</div>
-      <button class="interes">
+      <button class="interes" (click)="Postulacion()">
         <mat-icon>camera roll icon</mat-icon>
       </button>
-
-      
     </mat-card>
+
   </div>
   <ng-template #loading>
     <div class="container-spinner">
@@ -32,4 +30,6 @@
     </div>
   </ng-template>
 </div>
+
+
 
