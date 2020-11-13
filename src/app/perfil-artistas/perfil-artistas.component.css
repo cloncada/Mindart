@@ -109,6 +109,11 @@
   .mat-card-actions{
     text-align: right;
   }
+  .mat-chip{
+    min-height: 1rem;
+    padding: 9px;
+    background:#FFA726 !important;
+  }
   
   .mat-card-header{
     display: flex;
