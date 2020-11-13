@@ -22,7 +22,7 @@ export class PostempComponent implements OnInit {
     const idPostemp = this.route.snapshot.params.id;
     //Llama al metodo que solo obtiene un post
     this.postemp$ = this.postSvc.getOnePost(idPostemp);
-
+  
   }
   openInfo(){
 

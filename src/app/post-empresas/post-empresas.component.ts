@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { PostempService } from '../services/postemp.service';
@@ -27,6 +27,7 @@ export class PostEmpresasComponent implements OnInit {
     }
 
   ngOnInit(): void {
+    console.log(this.postempSvc.nombreEmpresa);
   }
 
   onSaveForm(){
@@ -36,6 +37,7 @@ export class PostEmpresasComponent implements OnInit {
         titlePost: this.postempSvc.selected.titlePost,
         contentPost: this.postempSvc.selected.contentPost,
         tagsPost: this.postempSvc.selected.tagsPost,
+        registra: this.postempSvc.nombreEmpresa
       }
       Swal.fire('Proyecto publicado','Su proyecto ha sido publicado con éxito.', 'success')
       this.postempSvc.addPostemp(newPostemp);
@@ -51,7 +53,6 @@ export class PostEmpresasComponent implements OnInit {
   close(): void{
     this.dialogRef.close();
   }
-
 }
 
 
