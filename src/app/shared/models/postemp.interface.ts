@@ -3,5 +3,5 @@
      contentPost: string;
      id?: string;
      tagsPost: string;
-     registra: string;
+     registra?: string;
  }

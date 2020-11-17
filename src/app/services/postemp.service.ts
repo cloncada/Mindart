@@ -12,10 +12,9 @@ export interface PostempID extends PostempI{id: string;}
 })
 export class PostempService {
   nombreEmpresa: string = '';
-
-
   private postempCollection: AngularFirestoreCollection<PostempI>;
   postemp: Observable<PostempID[]>;
+  postem$: Observable<PostempI[]>;
   public selected = {
     id: null,
     titlePost:'',
@@ -56,5 +55,16 @@ export class PostempService {
     return this.afs.doc<PostempI>(`postemp/${id}`).valueChanges();
   }
 
+  getPostempByName() {
+    const post  = this.afs.collection('postemp', ref => ref.where('registra', '==', this.nombreEmpresa));
+    return this.postem$ = post.snapshotChanges()
+      .pipe(map(changes => {
+        return changes.map(action => {
+          const data = action.payload.doc.data() as PostempI;
+          data.id = action.payload.doc.id;
+          return data;
+        });
+      }));
+  }
 }
 

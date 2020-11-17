@@ -27,7 +27,6 @@ export class PostEmpresasComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    console.log(this.postempSvc.nombreEmpresa);
   }
 
   onSaveForm(){
