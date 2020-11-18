@@ -13,6 +13,7 @@ export interface PostartistaID extends PostartistaI{id: string;}
   providedIn: 'root'
 })
 export class PostartistaService {
+  nombreArtista: string='';
 private filePath: any;
 private downloadURL: Observable<string>;
 private postartistaCollection: AngularFirestoreCollection<PostartistaI>;
@@ -20,7 +21,9 @@ postartista: Observable<PostartistaID>
 public selected = {
   id: null,
   titlePost:'',
-  contentPost: ''
+  contentPost: '',
+  tagsPost:'',
+  registra:''
 };
 
   constructor(private readonly afs: AngularFirestore, private storage: AngularFireStorage) { 
@@ -36,7 +39,9 @@ public selected = {
       titlePost: post.titlePost,
       contentPost: post.contentPost,
       imagePost: this.downloadURL,
-      fileRef: this.filePath
+      tagsPost: post.tagsPost,
+      fileRef: this.filePath,
+      registra: this.nombreArtista
     };
     //Todo_editar post
     this.postartistaCollection.add(postObj);

@@ -8,6 +8,13 @@
             <mat-label>CONTENIDO</mat-label>
             <input matInput placeholder="Contenido" formControlName="contentPost" name="contentPost" [(ngModel)]="this.postSvc.selected.contentPost">
         </mat-form-field>
+        <mat-form-field>
+            <mat-select placeholder="Tags" multiple formControlName="tagsPost" name="tagsPost" [(ngModel)]="this.postSvc.selected.tagsPost">
+                <mat-option value="Imagen">IMAGEN</mat-option>
+                <mat-option value="Dibujo">DIBUJO</mat-option>
+                <mat-option value="Retrato">RETRATO</mat-option>
+            </mat-select> 
+        </mat-form-field>
         <div class="container-input-file">
             <label class="custom-file">
                 <input type="file" accept=".png, .jpg, .jpeg" formControlName="imagePost" (change)="handleImage($event)"/>

@@ -4,5 +4,6 @@ export interface PostartistaI{
     imagePost?: any;
     id?: string;
     fileRef?: string;
-    //tagsPost: string
+    tagsPost: string;
+    registra: string;
 }

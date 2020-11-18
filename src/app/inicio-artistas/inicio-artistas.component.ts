@@ -22,8 +22,7 @@ export class InicioArtistasComponent implements OnInit {
   
   public postsemp$: Observable<PostempI[]>;
   private db = firebase.firestore();
-  public nombreEmp:string;
-  public idEmp:string;
+  private clientes:any;
  
 
 
@@ -36,12 +35,12 @@ export class InicioArtistasComponent implements OnInit {
   ngOnInit(): void {
     this.app.FalseToolBar();
     this.postsemp$ = this.postempSvc.getAllPostemp();
-  
+    
   }
 
   Postulacion(){
     this.prueba();
-    console.log(this.nombreEmp +this.idEmp);  
+    
     /*console.log(""+this.firestore.collection("artistas").valueChanges()._subscribe(post => ));{
       const post = this.db.collection("postemp")
       const query = post.where("registra","==", ).get().then((querySnapschot)=>{
@@ -53,12 +52,15 @@ export class InicioArtistasComponent implements OnInit {
       //console.log("another try"+this.postempSvc.selected.id);*/
     } 
   
-    prueba(demo = document.getElementById('registra'),demo1=document.getElementById('id')){
+    prueba(){
       
+      var demo = document.getElementById('registra');
+      var demo1=document.getElementById('id')
       var ver = demo.innerText;
       var ver1= demo1.innerText;
-      this.nombreEmp=ver;
-      this.idEmp=ver1;
+      var nombreEmp=ver;
+      var idEmp=ver1;
+      console.log(nombreEmp + " " + idEmp);  
     }
     
   
