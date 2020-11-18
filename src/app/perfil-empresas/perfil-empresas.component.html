@@ -23,11 +23,9 @@
     <button class="editBtn" mat-icon-button>
       <mat-icon>edit</mat-icon>
     </button>
-<!--     <h1>{{nombre}}</h1> -->
   <!--NOMBRE EMPRESA-->
     <h3 class="nombre" id="nombreemp"><strong>REACHING DREAMS</strong></h3>
   </section>
-
 <!--BOTON NUEVO PROYECTO-->
 <div class="container-btn-new">
   <button class="BtnNuevoP" mat-raised-button (click)="onEdit()">
@@ -37,7 +35,6 @@
 </div>
 <hr class="Linea">
 <p class="Titulos"><strong>TUS PROYECTOS PUBLICADOS</strong></p>
-
 
 <!--TARJETAS PROYECTOS-->
 <section class="proyectos" *ngIf="postsemp$ | async as postsemp; else loading">

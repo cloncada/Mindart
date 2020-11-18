@@ -4,7 +4,7 @@ import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dial
 import { NotificacionesComponent } from '../notificaciones/notificaciones.component';
 import { PostempID, PostempService } from '../services/postemp.service';
 import { PostempI } from '../shared/models/postemp.interface';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import Swal from 'sweetalert2';
 import { PostEmpresasComponent } from '../post-empresas/post-empresas.component';
 
@@ -18,6 +18,8 @@ export class PerfilEmpresasComponent implements OnInit {
   nombre: string ='';
 
   public postsemp$: Observable<PostempI[]>;
+ 
+
   profileBusinessImg="./assets/Photos/Perfil-Empresa.jpg";
   constructor(
     private app:AppComponent, 
@@ -26,9 +28,10 @@ export class PerfilEmpresasComponent implements OnInit {
 
   ngOnInit(): void {
     this.app.FalseToolBar();
-    this.postsemp$ = this.postempSvc.getAllPostemp();
     this.NombEmpresa();
     this.postempSvc.nombreEmpresa = this.nombre;
+    this.postsemp$= this.postempSvc.getPostempByName();
+    /*     this.postsemp$ = this.postempSvc.getAllPostemp();  OBTIENE TODOS LOS POST SIN FILTRADO DE EMPRESA*/
   }
 
   onEdit(postemp?){
@@ -38,8 +41,6 @@ export class PerfilEmpresasComponent implements OnInit {
       this.postempSvc.selected = postemp;
     }
   }
-
-
 
   onDelete(postemp:PostempI){
     //Alert para borrar un post
@@ -81,10 +82,8 @@ export class PerfilEmpresasComponent implements OnInit {
   }
 
   NombEmpresa(){
-    
     var demo= document.getElementById('nombreemp');
     var ver= demo.innerText;
     this.nombre = ver;
   }
-
 }
