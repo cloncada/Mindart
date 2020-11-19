@@ -15,14 +15,14 @@ import { PostempI } from '../shared/models/postemp.interface';
 export class PostempComponent implements OnInit {
   public postemp$ : Observable<PostempI>;
 
-  constructor(private route: ActivatedRoute, private app:AppComponent, private postSvc: PostempService) { }
+  constructor(private route: ActivatedRoute, private app:AppComponent, private postempSvc: PostempService) { }
 
   ngOnInit(): void {
     this.app.FalseToolBar();
     const idPostemp = this.route.snapshot.params.id;
     //Llama al metodo que solo obtiene un post
-    this.postemp$ = this.postSvc.getOnePost(idPostemp);
-
+    this.postemp$ = this.postempSvc.getOnePost(idPostemp);
+  
   }
   openInfo(){
 

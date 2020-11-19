@@ -4,7 +4,7 @@ import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dial
 import { NotificacionesComponent } from '../notificaciones/notificaciones.component';
 import { PostempID, PostempService } from '../services/postemp.service';
 import { PostempI } from '../shared/models/postemp.interface';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import Swal from 'sweetalert2';
 import { PostEmpresasComponent } from '../post-empresas/post-empresas.component';
 
@@ -15,7 +15,11 @@ import { PostEmpresasComponent } from '../post-empresas/post-empresas.component'
 })
 export class PerfilEmpresasComponent implements OnInit {
 
+  nombre: string ='';
+
   public postsemp$: Observable<PostempI[]>;
+ 
+
   profileBusinessImg="./assets/Photos/Perfil-Empresa.jpg";
   constructor(
     private app:AppComponent, 
@@ -24,7 +28,10 @@ export class PerfilEmpresasComponent implements OnInit {
 
   ngOnInit(): void {
     this.app.FalseToolBar();
-    this.postsemp$ = this.postempSvc.getAllPostemp();
+    this.NombEmpresa();
+    this.postempSvc.nombreEmpresa = this.nombre;
+    this.postsemp$= this.postempSvc.getPostempByName();
+    /*     this.postsemp$ = this.postempSvc.getAllPostemp();  OBTIENE TODOS LOS POST SIN FILTRADO DE EMPRESA*/
   }
 
   onEdit(postemp?){
@@ -34,8 +41,6 @@ export class PerfilEmpresasComponent implements OnInit {
       this.postempSvc.selected = postemp;
     }
   }
-
-
 
   onDelete(postemp:PostempI){
     //Alert para borrar un post
@@ -76,80 +81,9 @@ export class PerfilEmpresasComponent implements OnInit {
     this.postempSvc.selected.id= null;
   }
 
-
-
-
-
-/*   openInfo(){
-    this.dialog.open(NotificacionesComponent);
+  NombEmpresa(){
+    var demo= document.getElementById('nombreemp');
+    var ver= demo.innerText;
+    this.nombre = ver;
   }
-
-
- 
-
-  onNewPostemp(){
-  this.dialog.open(FormProyectoComponent)
-  }
-
-/*   onEditPostemp(postemp: PostempI): void {
-    this.openDialog(postemp);
-  } */
-
-/*   onEdit(element: PostempID){
-    this.openModal();
-    if(element){
-      this.postempSvc.selected = element;
-    }
-  }
-
-  onDeletePostemp(postemp:PostempI){
-//Alert para borrar un post
-    Swal.fire({
-      title:'¿Seguro que desea eliminar este proyecto?',
-      text:`Esta acción no se podrá revertir`,
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#0288D1',
-      confirmButtonText: 'Eliminar',
-      cancelButtonColor: '#D32F2F',
-      cancelButtonText: 'Cancelar'
-    }).then(result=> {
-      if(result.value){
-        // Quiere borrar
-        this.postempSvc.deletePostempById(postemp).then(()=>{
-          Swal.fire('Proyecto eliminado','Su proyecto ha sido eliminado con éxito.', 'success')
-        }).catch((error)=>{
-          Swal.fire('Error','Se ha producido un error', 'error')
-        });
-      }
-    });
-  }
-   */
- //* openDialog(postemp?: PostempI): void{
-/*   const config ={
-    data: {
-      message: postemp ? 'EditPostemp' : 'NewPostemp',
-      content: postemp
-    }
-  };
-  
-  const dialogRef = this.dialog.open(ModalComponent, config);
-  dialogRef.afterClosed().subscribe(result =>{
-    console.log(`Dialog result ${result}`);
-  });
-  } */
-
-/*   openModal(): void{
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.data={
-      title: 'Modal'
-    };
-    dialogConfig.autoFocus = true;
-    this.dialog.open(FormProyectoComponent, dialogConfig);
-
-    }
-  */
 }
- 
-
-

@@ -9,7 +9,7 @@
     <button mat-button mat-icon-button class="btn3">
         <mat-icon>more_vert</mat-icon>
     </button>
-    <button mat-button mat-icon-button class="btn4" onclick="location.href='inicio/inicio.component.html'"  style="margin: 10px">
+    <button mat-button mat-icon-button class="btn4" [routerLink]= "['/inicio-empresas']" style="margin: 10px">
         <mat-icon>home</mat-icon>
     </button>
 </mat-toolbar>
@@ -24,10 +24,8 @@
       <mat-icon>edit</mat-icon>
     </button>
   <!--NOMBRE EMPRESA-->
-    <h3 class="nombre"><strong>REACHING DREAMS</strong></h3>
+    <h3 class="nombre" id="nombreemp"><strong>REACHING DREAMS</strong></h3>
   </section>
-
-
 <!--BOTON NUEVO PROYECTO-->
 <div class="container-btn-new">
   <button class="BtnNuevoP" mat-raised-button (click)="onEdit()">
@@ -36,7 +34,7 @@
   </button>
 </div>
 <hr class="Linea">
-<p class="Titulos"><strong>MIS PROYECTOS</strong></p>
+<p class="Titulos"><strong>TUS PROYECTOS PUBLICADOS</strong></p>
 
 <!--TARJETAS PROYECTOS-->
 <section class="proyectos" *ngIf="postsemp$ | async as postsemp; else loading">

@@ -2,5 +2,6 @@
      titlePost: string;
      contentPost: string;
      id?: string;
-     tagsPost: string
+     tagsPost: string;
+     registra?: string;
  }
