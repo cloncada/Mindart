@@ -40,13 +40,13 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDividerModule } from '@angular/material/divider';
 
-//Firebase 
+//Firebase
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { PostEmpresasComponent } from './post-empresas/post-empresas.component';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import { NavbarComponent } from './general/navbar/navbar.component';  
+import { NavbarComponent } from './general/navbar/navbar.component';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import { NavbarEmpresasComponent } from './general/navbar-empresas/navbar-empresas.component';
 import { NavbarInicioArtistaComponent } from './general/navbar-inicio-artista/navbar-inicio-artista.component';
@@ -56,7 +56,12 @@ import { NewPostartistaComponent } from './postartista/new-postartista/new-posta
 import { PostartistaComponent } from './postartista/postartista/postartista.component';
 //import { TableComponent } from './postartista/table/table.component';
 import { ModalComponent } from './postartista/modal/modal.component';
+
 import { PostNotificacionComponent } from './post-notificacion/post-notificacion.component';
+
+import { CompanyListComponent } from './company-list/company-list.component';
+
+
 
 
 
@@ -79,7 +84,7 @@ import { PostNotificacionComponent } from './post-notificacion/post-notificacion
     InicioAdminComponent,
     ArtistListComponent,
     SubirArchivoComponent,
-    
+
     NavbarComponent,
     NavbarEmpresasComponent,
     NavbarInicioArtistaComponent,
@@ -90,9 +95,13 @@ import { PostNotificacionComponent } from './post-notificacion/post-notificacion
     PostartistaComponent,
     //TableComponent,
     ModalComponent,
+
     PostNotificacionComponent,
+
+    CompanyListComponent,
+
     //NewPostartistaModule,
-    
+
 
   ],
   imports: [
@@ -111,7 +120,7 @@ import { PostNotificacionComponent } from './post-notificacion/post-notificacion
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
-    FormsModule,  
+    FormsModule,
     ReactiveFormsModule,
     MatGridListModule,
     HttpClientModule,

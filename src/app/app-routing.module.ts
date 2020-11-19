@@ -10,9 +10,11 @@ import { InicioAdminComponent } from './inicio-admin/inicio-admin.component';
 import { InicioArtistasComponent } from './inicio-artistas/inicio-artistas.component';
 import { InicioEmpresasComponent } from './inicio-empresas/inicio-empresas.component';
 import { ArtistListComponent } from './artist-list/artist-list.component';
+import { CompanyListComponent } from './company-list/company-list.component';
 import { EditarArtistaComponent } from './editar-artista/editar-artista.component';
 import { PostempComponent } from './postemp/postemp.component';
 import { PostartistaComponent } from './postartista/postartista/postartista.component';
+
 
 
 const routes: Routes = [
@@ -24,10 +26,11 @@ const routes: Routes = [
 {path :"login-admin", component:LoginAdminComponent},
 {path :"perfil-artistas", component:PerfilArtistasComponent},
 {path :"perfil-empresas", component:PerfilEmpresasComponent},
-{path :"inicio-admin", component:InicioAdminComponent},
+{path :"inicio-admin", component:ArtistListComponent},
 {path :"inicio-artistas", component:InicioArtistasComponent},
 {path :"inicio-empresas", component:InicioEmpresasComponent},
-{path :"lista-artistas", component:ArtistListComponent},
+{path :"admin-empresas", component:CompanyListComponent},
+
 { path: 'login', loadChildren: () => import('./auth/login/login.module').then(m => m.LoginModule) },
 { path: 'register', loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule) },
 {path:'',redirectTo:'/artistas',pathMatch:'full'},
