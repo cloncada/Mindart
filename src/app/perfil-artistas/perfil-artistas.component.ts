@@ -19,9 +19,6 @@ import { PostartistaComponent } from '../postartista/postartista/postartista.com
 import { PostartistaID} from '../services/postartista.service';
 import { PostNotificacionComponent } from '../post-notificacion/post-notificacion.component';
 
-//import * as firebase from 'firebase';
-//import { Observable } from 'rxjs';
-
 @Component({
   selector: 'app-perfil-artistas',
   templateUrl: './perfil-artistas.component.html',
@@ -58,10 +55,11 @@ export class PerfilArtistasComponent implements OnInit {
    urlImage: Observable<string>;*/
 
   ngOnInit(): void {
-    this.postartista$= this.postSvc.getAllPosts();
+/*     this.postartista$= this.postSvc.getAllPosts();  */ 
     this.app.FalseToolBar();
     this.NombArtista();
     this.postSvc.nombreArtista=this.nombre;
+    this.postartista$ = this.postSvc.getPostartByName();
   }
 
 openModal(): void{
@@ -170,49 +168,3 @@ private initValuesForm(){
 
 
 
-/*selectedFile= null;
-  onfileSelected(event){
-    this.selectedFile= event.target.files[0];
-}
-onUpload(){
-
-}*/
-/*public postartista: {
-  id: string;
-  titlePost: string;
-  contentPost: string;
-  imagePost: string;
-}[]=[
-  {
-    id:'1',
-    titlePost: 'Post one',
-    contentPost: 'Aca podras implementar un nuevo proyecto para mostrar a las empresas',
-    imagePost: 'https://cdn.cheapism.com/images/2020tuscon.max-800x600.jpg',
-  },
-  {
-    id:'2',
-    titlePost: 'Post Two',
-    contentPost: 'Aca podras implementar un nuevo proyecto para mostrar a las empresas',
-    imagePost: 'https://cdn.cheapism.com/images/2020tuscon.max-800x600.jpg',
-  },
-  {
-    id:'3',
-    titlePost: 'Post Two',
-    contentPost: 'Aca podras implementar un nuevo proyecto para mostrar a las empresas',
-    imagePost: 'https://cdn.cheapism.com/images/2020tuscon.max-800x600.jpg',
-  },
-  {
-    id:'4',
-    titlePost: 'Post Two',
-    contentPost: 'Aca podras implementar un nuevo proyecto para mostrar a las empresas',
-    imagePost: 'https://cdn.cheapism.com/images/2020tuscon.max-800x600.jpg',
-  }
-];*/
-
-/*openArchivo(){
-    this.dialog.open(SubirArchivoComponent);
-  }*/
- 
-  /*openArtistas(){
-    this.dialog.open(ini);
-  }*/

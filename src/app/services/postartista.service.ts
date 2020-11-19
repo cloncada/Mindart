@@ -13,11 +13,12 @@ export interface PostartistaID extends PostartistaI{id: string;}
   providedIn: 'root'
 })
 export class PostartistaService {
-  nombreArtista: string='';
+nombreArtista: string='';
 private filePath: any;
 private downloadURL: Observable<string>;
 private postartistaCollection: AngularFirestoreCollection<PostartistaI>;
 postartista: Observable<PostartistaID>
+postart$: Observable<PostartistaI[]>;
 public selected = {
   id: null,
   titlePost:'',
@@ -94,5 +95,17 @@ public selected = {
 
   public editPostartista(postartista: PostartistaID){
     return this.postartistaCollection.doc(postartista.id).update(postartista);
+  }
+
+  getPostartByName() {
+    const post  = this.afs.collection('postartista', ref => ref.where('registra', '==', this.nombreArtista));
+    return this.postart$ = post.snapshotChanges()
+      .pipe(map(changes => {
+        return changes.map(action => {
+          const data = action.payload.doc.data() as PostartistaI;
+          data.id = action.payload.doc.id;
+          return data;
+        });
+      }));
   }
 }
