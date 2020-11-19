@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
-import { NotificacionesComponent } from '../notificaciones/notificaciones.component';
 import { PostempID, PostempService } from '../services/postemp.service';
 import { PostempI } from '../shared/models/postemp.interface';
 import { Observable, Subject } from 'rxjs';
 import Swal from 'sweetalert2';
 import { PostEmpresasComponent } from '../post-empresas/post-empresas.component';
+import { PostNotificacionComponent } from '../post-notificacion/post-notificacion.component';
+import { NotificacionService } from '../services/notificacion-service.service';
 
 @Component({
   selector: 'app-perfil-empresas',
@@ -18,13 +19,15 @@ export class PerfilEmpresasComponent implements OnInit {
   nombre: string ='';
 
   public postsemp$: Observable<PostempI[]>;
+
  
 
   profileBusinessImg="./assets/Photos/Perfil-Empresa.jpg";
   constructor(
     private app:AppComponent, 
     private postempSvc:PostempService,
-    private dialog: MatDialog) { }
+    private dialog: MatDialog,
+    private postNotiSvc:NotificacionService,) { }
 
   ngOnInit(): void {
     this.app.FalseToolBar();
@@ -73,6 +76,15 @@ export class PerfilEmpresasComponent implements OnInit {
     dialogConfig.autoFocus = true;
     this.dialog.open(PostEmpresasComponent, dialogConfig);
   }
+  openModalNoti(): void{
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = {
+      title: 'Modal'
+    };
+    dialogConfig.autoFocus = true;
+    this.dialog.open(PostNotificacionComponent, dialogConfig);
+  }
+
 
   resetForm(): void{
     this.postempSvc.selected.titlePost='';
@@ -85,5 +97,10 @@ export class PerfilEmpresasComponent implements OnInit {
     var demo= document.getElementById('nombreemp');
     var ver= demo.innerText;
     this.nombre = ver;
+  }
+
+  showNoti(){
+    this.openModalNoti();
+  
   }
 }

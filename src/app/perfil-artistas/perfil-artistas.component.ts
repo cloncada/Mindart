@@ -17,6 +17,7 @@ import Swal from 'sweetalert2';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PostartistaComponent } from '../postartista/postartista/postartista.component';
 import { PostartistaID} from '../services/postartista.service';
+import { PostNotificacionComponent } from '../post-notificacion/post-notificacion.component';
 
 //import * as firebase from 'firebase';
 //import { Observable } from 'rxjs';
@@ -150,7 +151,15 @@ private initValuesForm(){
    var ver=demo.innerText;
    this.nombre=ver;
  }
- 
+
+ openModalNoti(): void{
+  const dialogConfig = new MatDialogConfig();
+  dialogConfig.data = {
+    title: 'Modal'
+  };
+  dialogConfig.autoFocus = true;
+  this.dialog.open(PostNotificacionComponent, dialogConfig);
+}
 }
 
 
