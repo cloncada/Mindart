@@ -18,7 +18,7 @@ export class PostempComponent implements OnInit {
   constructor(private route: ActivatedRoute, private app:AppComponent, private postempSvc: PostempService) { }
 
   ngOnInit(): void {
-    this.app.FalseToolBar();
+
     const idPostemp = this.route.snapshot.params.id;
     //Llama al metodo que solo obtiene un post
     this.postemp$ = this.postempSvc.getOnePost(idPostemp);

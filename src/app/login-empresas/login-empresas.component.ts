@@ -44,7 +44,7 @@ export class LoginEmpresasComponent implements OnInit {
           alert("usaurio o contraseña erroneos")
         }
         else{
-
+          localStorage.setItem("empresa",JSON.stringify(this.company));
           this.router.navigate(["inicio-empresas"]);
         }
         

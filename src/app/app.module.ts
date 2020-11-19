@@ -56,6 +56,7 @@ import { NewPostartistaComponent } from './postartista/new-postartista/new-posta
 import { PostartistaComponent } from './postartista/postartista/postartista.component';
 //import { TableComponent } from './postartista/table/table.component';
 import { ModalComponent } from './postartista/modal/modal.component';
+import { PostNotificacionComponent } from './post-notificacion/post-notificacion.component';
 
 
 
@@ -89,6 +90,7 @@ import { ModalComponent } from './postartista/modal/modal.component';
     PostartistaComponent,
     //TableComponent,
     ModalComponent,
+    PostNotificacionComponent,
     //NewPostartistaModule,
     
 
