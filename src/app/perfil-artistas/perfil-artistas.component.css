@@ -4,36 +4,40 @@
 .arriba{
     background: white;
     margin-top: 10px;
-  margin-bottom: 10px;
-  margin-right: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
 }
 .perfil{
     text-align:center;
     font-size: 10%;
 }
 .imgRedonda {
-    /*width:300px;
-    height:300px;*/
-    
-    width:130px;
-    height: 130px;
-    margin: auto;
-    /*width: 200px;
-    margin: 200px;*/
-    border-radius:160px;
-    border:6px solid purple;
+  width: 130px;
+  height: 130px;
+  border-radius:160px;
+  display:block;
+  margin:auto;
+  border:6px solid purple;
 }
 .Texto{
-    /*widows: 0px;
-    height: 0px;
-    margin: auto;
-    text-align: center;
-    line-height: 350px;
-    font-size: 80%;*/
-    text-align: center;
+  text-align: center;
   font-size: 80;
   color:#37474F;  
 }
+
+.Titulos{
+  font-size: 50;
+  color: #616161;
+  text-align: center;
+}
+
+.container-btn-new{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin: 1rem -0.6rem;
+}
+
 .btn2{
     margin-top: 10px;
   margin-bottom: 10px;
@@ -54,8 +58,6 @@
     margin: 20px 10px 5px;
   }
 .BtnNuevoP{
-    margin-left: 75%;
-    margin-right: 2%;
     background: #2E7D32;
     color: white;
   }
@@ -78,11 +80,6 @@
     margin: 20px;
     background:  #EEEEEE;
     border-radius: 5px;
-    /*background: white;
-    color: #fff;
-    border-radius: 5px;
-    padding: 20px;
-    font-size: 150%;*/
   }
   /*p.content{
     white-space: nowrap;
@@ -99,7 +96,7 @@
     color:#616161;
   }
 
-  .proyecto-card p{
+  .postartista-card p{
     text-align: justify;
     white-space: nowrap;
     overflow: hidden;
@@ -121,7 +118,13 @@
     text-align: center;
     text-transform: uppercase;
   }
-
+  .container-spinner{
+    margin-top: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
 
 
   
