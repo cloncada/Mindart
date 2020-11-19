@@ -1,15 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ArtistServiceService } from '../../app/services/artist-service.service';
+import { ListArtistService } from '../../app/services/list-artist.service';
 import {MatTableDataSource} from '@angular/material/table';
-export interface Artist {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-const ELEMENT_DATA: Artist[] = [
+import {ArtistI} from '../ ../../models/artist.inteface';
+import { Location } from '@angular/common';
 
-];
+
+
 @Component({
   selector: 'app-artist-list',
   templateUrl: './artist-list.component.html',
@@ -17,14 +13,31 @@ const ELEMENT_DATA: Artist[] = [
 })
 
 export class ArtistListComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name', 'number','email', 'actions'];
-  dataSource: MatTableDataSource<Artist>;
+  displayedColumns: string[] = ['name', 'dob', 'number','email', 'password', 'actions'];
+  dataSource = new MatTableDataSource();
 
-  constructor(private service: ArtistServiceService) { }
-  artists: any[];
-  ngOnInit(): void {
-    
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+  constructor(private artistService: ListArtistService,
+    private location: Location) { }
+
+  artistas: any[];
+
+  ngOnInit() {
+    this.artistService.getAllArtist().subscribe(res => this.dataSource.data = res);
+
+  }
+  onDelete(id: string){
+    this.artistService.deleteArtist(id);
+  }
+
+  bttList(){
+    this.location.go("/admin-empresas"),
+      window.location.reload();
+  }
+
 
 
 }
