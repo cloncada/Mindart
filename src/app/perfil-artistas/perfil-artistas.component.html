@@ -1,13 +1,10 @@
 <mat-toolbar class="arriba"><div class="perfil-artistas"></div>  
   <img src="assets\Logos\Mindart.jpeg"> 
     <p class="espacio"></p>
-      <button class="btn2" type="button" mat-icon-button aria-label="Example icon button with a vertical three dot icon" (click)="openModalNoti()">
+      <button  color="primary" class="btn2" type="button" mat-icon-button aria-label="Example icon button with a vertical three dot icon" (click)="openModalNoti()">
         <mat-icon>notification_important</mat-icon>
       </button>
-      <button class="btn3" type="button" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
-        <mat-icon>more_vert</mat-icon>
-      </button>
-      <button class="btn4" type="button"  [routerLink]= "['/inicio-artistas']" mat-icon-button aria-label="Example icon button with a vertical three dot icon" style="margin: 10px">
+      <button color="accent" class="btn4" type="button"  [routerLink]= "['/inicio-artistas']" mat-icon-button aria-label="Example icon button with a vertical three dot icon" style="margin: 10px">
           <mat-icon>home</mat-icon>
       </button>
     </mat-toolbar>
