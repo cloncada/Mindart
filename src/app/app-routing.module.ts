@@ -15,8 +15,6 @@ import { EditarArtistaComponent } from './editar-artista/editar-artista.componen
 import { PostempComponent } from './postemp/postemp.component';
 import { PostartistaComponent } from './postartista/postartista/postartista.component';
 
-
-
 const routes: Routes = [
 {path : '', redirectTo: '/empresas', pathMatch:'full'},
 {path : '', redirectTo: '/artistas', pathMatch:'full'},
