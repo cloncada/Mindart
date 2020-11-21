@@ -60,6 +60,7 @@ import { ModalComponent } from './postartista/modal/modal.component';
 import { PostNotificacionComponent } from './post-notificacion/post-notificacion.component';
 
 import { CompanyListComponent } from './company-list/company-list.component';
+import { NavbarInicioEmpresasComponent } from './general/navbar-inicio-empresas/navbar-inicio-empresas.component';
 
 
 
@@ -99,6 +100,8 @@ import { CompanyListComponent } from './company-list/company-list.component';
     PostNotificacionComponent,
 
     CompanyListComponent,
+
+    NavbarInicioEmpresasComponent,
 
     //NewPostartistaModule,
 
