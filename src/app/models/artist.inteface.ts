@@ -1,7 +1,8 @@
 export interface ArtistI {
+  id?: string;
   name:string;
   dob:string;
-  number:number;
+  number:string;
   email: string;
   password:string;
 

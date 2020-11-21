@@ -58,6 +58,8 @@ import { PostartistaComponent } from './postartista/postartista/postartista.comp
 import { ModalComponent } from './postartista/modal/modal.component';
 import { PostNotificacionComponent } from './post-notificacion/post-notificacion.component';
 import { CompanyListComponent } from './company-list/company-list.component';
+import { FeditArtistComponent } from './fedit-artist/fedit-artist.component';
+import { FeditCompanyComponent } from './fedit-company/fedit-company.component';
 import { NavbarInicioEmpresasComponent } from './general/navbar-inicio-empresas/navbar-inicio-empresas.component';
 import { LoginArtistasService } from './services/login-artistas.service';
 
@@ -97,6 +99,11 @@ import { LoginArtistasService } from './services/login-artistas.service';
     ModalComponent,
     PostNotificacionComponent,
     CompanyListComponent,
+
+    FeditArtistComponent,
+
+    FeditCompanyComponent,
+
     NavbarInicioEmpresasComponent,
     //NewPostartistaModule,
   ],

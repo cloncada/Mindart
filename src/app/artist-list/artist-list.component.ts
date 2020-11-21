@@ -33,6 +33,11 @@ export class ArtistListComponent implements OnInit {
     this.artistService.deleteArtist(id);
   }
 
+  onEdit(element){
+    this.artistService.selected =element;
+
+  }
+
   bttList(){
     this.location.go("/admin-empresas"),
       window.location.reload();

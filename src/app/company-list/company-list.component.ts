@@ -25,6 +25,10 @@ export class CompanyListComponent implements OnInit {
   onDelete(id: string){
     this.companyService.deleteCompany(id);
   }
+  onEdit(element){
+    this.companyService.selected=element;
+
+  }
 
 
 
