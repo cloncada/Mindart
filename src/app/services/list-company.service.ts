@@ -12,6 +12,18 @@ export interface CompanyID extends CompanyI {id: string;}
 export class ListCompanyService {
   private companyCollection: AngularFirestoreCollection<CompanyI>;
   company: Observable<CompanyID[]>;
+
+  public selected = {
+    id:null,
+    email: '',
+    name: '',
+    nit: '',
+    number: '',
+    password:'',
+
+  };
+
+
   constructor(private readonly afs:AngularFirestore) {
     this.companyCollection = afs.collection<CompanyI>('empresas');
     this.company = this.companyCollection.snapshotChanges().pipe(
@@ -27,7 +39,13 @@ export class ListCompanyService {
     return this.company;
    }
 
-   deleteCompany(id: string) {
+  editCompany(companies: CompanyI ){
+
+    return this.companyCollection.doc(companies.id).update(companies);
+
+  }
+
+  deleteCompany(id: string) {
     return this.companyCollection.doc(id).delete();
    }
 

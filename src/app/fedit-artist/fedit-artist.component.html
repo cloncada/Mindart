@@ -1,0 +1,21 @@
+<div class="container">
+  <mat-form-field>
+    <input matInput placeholder="email" name= 'email' [(ngModel)]="this.artistService.selected.email">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="nombre" name= 'mombre'[(ngModel)]="this.artistService.selected.name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="fecha nacimiento" name= 'fecha'[(ngModel)]="this.artistService.selected.dob">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="contraseña" name= 'contraseña'[(ngModel)]="this.artistService.selected.password">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="numero" name= 'numero'[(ngModel)]="this.artistService.selected.number">
+  </mat-form-field>
+  <button mat-flat-button color= "primary" (click)="onSaveForm()" >
+    <mat-icon>save</mat-icon> Guardar
+  </button>
+
+</div>

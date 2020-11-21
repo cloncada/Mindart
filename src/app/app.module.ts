@@ -60,6 +60,8 @@ import { ModalComponent } from './postartista/modal/modal.component';
 import { PostNotificacionComponent } from './post-notificacion/post-notificacion.component';
 
 import { CompanyListComponent } from './company-list/company-list.component';
+import { FeditArtistComponent } from './fedit-artist/fedit-artist.component';
+import { FeditCompanyComponent } from './fedit-company/fedit-company.component';
 
 
 
@@ -99,6 +101,10 @@ import { CompanyListComponent } from './company-list/company-list.component';
     PostNotificacionComponent,
 
     CompanyListComponent,
+
+    FeditArtistComponent,
+
+    FeditCompanyComponent,
 
     //NewPostartistaModule,
 

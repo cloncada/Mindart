@@ -1,8 +1,9 @@
 export interface CompanyI {
+  id?: string;
   email: string;
   name:string;
-  nit:number;
-  number:number;
+  nit:string;
+  number:string;
   password:string;
 
 }

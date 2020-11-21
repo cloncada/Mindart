@@ -14,6 +14,16 @@ export class ListArtistService {
   private artistCollection: AngularFirestoreCollection<ArtistI>;
   artistas: Observable<ArtistID[]>;
 
+  public selected = {
+    id:null,
+    email: '',
+    name: '',
+    dob: '',
+    password: '',
+    number:'',
+
+  };
+
   constructor(private readonly afs:AngularFirestore) {
     this.artistCollection = afs.collection<ArtistI>('artistas');
     this.artistas = this.artistCollection.snapshotChanges().pipe(
@@ -28,6 +38,12 @@ export class ListArtistService {
   getAllArtist() {
     return this.artistas;
    }
+
+  editArtist(artistas:  ArtistI){
+
+    return this.artistCollection.doc(artistas.id).update(artistas);
+
+  }
 
    deleteArtist(id: string) {
     return this.artistCollection.doc(id).delete();
