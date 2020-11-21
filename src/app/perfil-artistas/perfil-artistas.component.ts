@@ -25,7 +25,8 @@ import { PostNotificacionComponent } from '../post-notificacion/post-notificacio
   styleUrls: ['./perfil-artistas.component.css']
 })
 export class PerfilArtistasComponent implements OnInit {
-
+artista:any;
+nombreArtista:any;
   nombre: string='';
   private image: any;
   private imageOriginal: any;
@@ -60,6 +61,9 @@ export class PerfilArtistasComponent implements OnInit {
     this.NombArtista();
     this.postSvc.nombreArtista=this.nombre;
     this.postartista$ = this.postSvc.getPostartByName();
+    this.artista = localStorage.getItem("artista");
+    this.artista = JSON.parse(this.artista);
+    this.nombreArtista=this.artista.name;
   }
 
 openModal(): void{

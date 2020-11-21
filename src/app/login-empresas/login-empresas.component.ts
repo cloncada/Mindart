@@ -38,6 +38,14 @@ export class LoginEmpresasComponent implements OnInit {
       const user = await this.authSvc.login(this.datosLogin.value.email, this.datosLogin.value.password);
       if (user) {
         this.router.navigate(['/inicio-empresas']);
+        this.firestore.collection("empresas", ref => ref.where("email", "==", this.datosLogin.value.email)).valueChanges().subscribe(posts => {
+          this.company = posts as string[];
+          this.company = this.company[0];
+          localStorage.setItem("empresa", JSON.stringify(this.company));
+
+        }
+
+        );
       }
       else{alert("usuario o contraseña incorrectos")}
     } catch (error) { console.log(error);}

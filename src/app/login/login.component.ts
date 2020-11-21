@@ -39,31 +39,21 @@ export class LoginComponent implements OnInit {
       const user = await this.authSvc.login(this.datosLogin.value.email, this.datosLogin.value.password);
       if (user) {
         this.router.navigate(['/inicio-artistas']);
-      }
-      else{alert("usuario o contraseña incorrectos")}
-    } catch (error) { console.log(error);}
+        this.firestore.collection("artistas", ref => ref.where("email", "==", this.datosLogin.value.email)).valueChanges().subscribe(posts => {
+          this.artista = posts as string[];
+          this.artista = this.artista[0];
+          localStorage.setItem("artista", JSON.stringify(this.artista));
 
-
-    /*  this.firestore.collection("artistas", ref => ref.where("email", "==", this.datosLogin.value.email)).valueChanges().subscribe(posts => {
-        this.artista = posts as string[];
-        this.artista = this.artista[0];
-        if (this.artista === undefined) {
-          alert("usaurio  erroneo")
-        } else { 
-          if(this.artista.password!=this.datosLogin.value.password){
-  
-            alert("usaurio o contraseña erroneos")
-          }
-          else{
-            localStorage.setItem("artista",JSON.stringify(this.artista));
-            this.router.navigate(["inicio-artistas"]);
-          }
-          
-        
         }
-  
-  
-      });*/
+
+        );
+
+      }
+      else { alert("usuario o contraseña incorrectos") }
+    } catch (error) { console.log(error); }
+
+
+
 
   }
 }
