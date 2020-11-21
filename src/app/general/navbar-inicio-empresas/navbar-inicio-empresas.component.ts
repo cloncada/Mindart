@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginArtistasService } from 'src/app/services/login-artistas.service';
 
 @Component({
   selector: 'app-navbar-inicio-empresas',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class NavbarInicioEmpresasComponent implements OnInit {
   artista:any;
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authSvc: LoginArtistasService) { }
 
   ngOnInit(): void {
     this.artista=localStorage.getItem("artista");
@@ -19,5 +20,13 @@ export class NavbarInicioEmpresasComponent implements OnInit {
 
     this.router.navigate(["editar-artista"]);
 
+  }
+
+  async onLogout() {
+    try{
+      this.authSvc.logout();
+      this.router.navigate(['/empresas']);
+    }catch(error){console.log(error)}
+    
   }
 }
