@@ -3,18 +3,20 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { dashCaseToCamelCase } from '@angular/compiler/src/util';
 import {CompaniesServicesService} from '../services/companies-services.service';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { LoginArtistasService } from '../services/login-artistas.service';
 
 
 @Component({
   selector: 'app-signin-empresas',
   templateUrl: './signin-empresas.component.html',
-  styleUrls: ['./signin-empresas.component.css']
+  styleUrls: ['./signin-empresas.component.css'],
+  providers: [LoginArtistasService]
 })
 export class SigninEmpresasComponent implements OnInit {
 
   email = new FormControl('', [Validators.required, Validators.email]);
 
-  constructor(private service: CompaniesServicesService,private firestore: AngularFirestore) {
+  constructor(private service: CompaniesServicesService,private firestore: AngularFirestore, private authSvc: LoginArtistasService) {
   }
   ngOnInit(): void {
   }
@@ -33,7 +35,7 @@ export class SigninEmpresasComponent implements OnInit {
 
 
   onSubmit(){
-
+    this.authSvc.register(this.datosCompanies.value.email,this.datosCompanies.value.password);
     return new Promise<any>((resolve, reject) =>{
       this.firestore
           .collection("empresas")

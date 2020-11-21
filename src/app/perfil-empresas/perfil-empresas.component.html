@@ -3,13 +3,10 @@
     <img src="assets\Logos\Mindart.jpeg"> 
     <p class="espacio"></p>
     <!--BOTONES PARTE SUPERIOR-->
-    <button mat-button mat-icon-button class="btn2" (click)="showNoti()">
+    <button color="primary" mat-button mat-icon-button class="btn2" (click)="showNoti()">
         <mat-icon>notification_important</mat-icon>
     </button>
-    <button mat-button mat-icon-button class="btn3">
-        <mat-icon>more_vert</mat-icon>
-    </button>
-    <button mat-button mat-icon-button class="btn4" [routerLink]= "['/inicio-empresas']" style="margin: 10px">
+    <button color="accent" mat-button mat-icon-button class="btn4" [routerLink]= "['/inicio-empresas']" style="margin: 10px">
         <mat-icon>home</mat-icon>
     </button>
 </mat-toolbar>

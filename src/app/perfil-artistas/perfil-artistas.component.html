@@ -1,45 +1,32 @@
 <mat-toolbar class="arriba"><div class="perfil-artistas"></div>  
   <img src="assets\Logos\Mindart.jpeg"> 
-    <div class="espacio"></div>
     <p class="espacio"></p>
-        <div class="btn2" >
-            <button type="button" mat-icon-button aria-label="Example icon button with a vertical three dot icon" (click)="openModalNoti()">
-              <mat-icon>notification_important</mat-icon>
-            </button>
-        </div>
-        <div class="btn3" >
-            <button type="button" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-        </div>
-        <div class="btn4" >
-            <button type="button"  onclick="location.href='http://localhost:4200/artistas'" mat-icon-button aria-label="Example icon button with a vertical three dot icon" style="margin: 10px">
-                <mat-icon>home</mat-icon>
-              </button>
-            </div>
-            <div>
-            </div>
+      <button  color="primary" class="btn2" type="button" mat-icon-button aria-label="Example icon button with a vertical three dot icon" (click)="openModalNoti()">
+        <mat-icon>notification_important</mat-icon>
+      </button>
+      <button color="accent" class="btn4" type="button"  [routerLink]= "['/inicio-artistas']" mat-icon-button aria-label="Example icon button with a vertical three dot icon" style="margin: 10px">
+          <mat-icon>home</mat-icon>
+      </button>
     </mat-toolbar>
-    <div class="Texto">
-        <h3 id="nombreArt"> CAMILO ERNESTO </h3>
-    </div>
-    <div class="perfil">
-    <img class="imgRedonda" src="assets\Photos\perfil.jpg" width="80px" >
+    <mat-divider></mat-divider>&nbsp;
+<section>
+  <img class="imgRedonda" src="assets\Photos\perfil.jpg">
+  <button class="editBtn" mat-icon-button>
+    <mat-icon>edit</mat-icon>
+  </button>
+  <h3 class="Texto" id="nombreArt"><strong>CAMILO ERNESTO </strong> </h3>
+</section>
+<div class="container-btn-new">
+  <button (click)="onNewPost()" class="BtnNuevoP" mat-raised-button>
+    NUEVO PROYECTO
+    <mat-icon>add_circle_outline</mat-icon>
+  </button>
 </div>
-<button class="editBtn" mat-icon-button>
-  <mat-icon>edit</mat-icon>
-</button>
-  <div>
-    <button mat-stroked-button (click)="onNewPost()" class="BtnNuevoP" mat-raised-button>
-      NUEVO PROYECTO
-      <mat-icon>add_circle_outline</mat-icon>
-    </button>
-  </div>
-  
-  
-  <hr class="Linea">
-  <div class="container" *ngIf="postartista$ | async as postartista; else loading">
-    <mat-card class="postartista-card" *ngFor="let postartista of postartista">
+<hr class="Linea">
+<p class="Titulos"><strong>TUS PROYECTOS PUBLICADOS</strong></p>
+
+<section class="container" *ngIf="postartista$ | async as postartista; else loading">
+  <mat-card class="postartista-card" *ngFor="let postartista of postartista">
       <mat-card-header>
         <mat-card-title> {{postartista.titlePost}} </mat-card-title>
       </mat-card-header>
@@ -65,7 +52,8 @@
         </button>
       </mat-card-actions>
     </mat-card>
-  </div>
+  </section>
+
   <ng-template #loading>
     <div class="container-spinner">
       <mat-spinner></mat-spinner>

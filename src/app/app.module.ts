@@ -43,7 +43,7 @@ import { MatDividerModule } from '@angular/material/divider';
 //Firebase
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 import { PostEmpresasComponent } from './post-empresas/post-empresas.component';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { NavbarComponent } from './general/navbar/navbar.component';
@@ -56,12 +56,13 @@ import { NewPostartistaComponent } from './postartista/new-postartista/new-posta
 import { PostartistaComponent } from './postartista/postartista/postartista.component';
 //import { TableComponent } from './postartista/table/table.component';
 import { ModalComponent } from './postartista/modal/modal.component';
-
 import { PostNotificacionComponent } from './post-notificacion/post-notificacion.component';
-
 import { CompanyListComponent } from './company-list/company-list.component';
 import { FeditArtistComponent } from './fedit-artist/fedit-artist.component';
 import { FeditCompanyComponent } from './fedit-company/fedit-company.component';
+import { NavbarInicioEmpresasComponent } from './general/navbar-inicio-empresas/navbar-inicio-empresas.component';
+import { LoginArtistasService } from './services/login-artistas.service';
+
 
 
 
@@ -86,7 +87,6 @@ import { FeditCompanyComponent } from './fedit-company/fedit-company.component';
     InicioAdminComponent,
     ArtistListComponent,
     SubirArchivoComponent,
-
     NavbarComponent,
     NavbarEmpresasComponent,
     NavbarInicioArtistaComponent,
@@ -97,18 +97,15 @@ import { FeditCompanyComponent } from './fedit-company/fedit-company.component';
     PostartistaComponent,
     //TableComponent,
     ModalComponent,
-
     PostNotificacionComponent,
-
     CompanyListComponent,
 
     FeditArtistComponent,
 
     FeditCompanyComponent,
 
+    NavbarInicioEmpresasComponent,
     //NewPostartistaModule,
-
-
   ],
   imports: [
     BrowserModule,
@@ -137,7 +134,7 @@ import { FeditCompanyComponent } from './fedit-company/fedit-company.component';
     MatChipsModule,
     //NewPostartistaModule,
   ],
-  providers:[],
+  providers:[LoginArtistasService],
   entryComponents: [LoginComponent,SigninComponent,EmpresasComponent,PostEmpresasComponent, ModalComponent],
   bootstrap: [AppComponent]
 })
