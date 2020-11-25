@@ -62,6 +62,9 @@ import { FeditArtistComponent } from './fedit-artist/fedit-artist.component';
 import { FeditCompanyComponent } from './fedit-company/fedit-company.component';
 import { NavbarInicioEmpresasComponent } from './general/navbar-inicio-empresas/navbar-inicio-empresas.component';
 import { LoginArtistasService } from './services/login-artistas.service';
+import { ArtistaGuard } from './auth/guards/Artista.guard';
+import { AdminGuard } from './auth/guards/Admin.guard';
+import { EmpresaGuard } from './auth/guards/Empresa.guard';
 
 
 
@@ -134,7 +137,7 @@ import { LoginArtistasService } from './services/login-artistas.service';
     MatChipsModule,
     //NewPostartistaModule,
   ],
-  providers:[LoginArtistasService],
+  providers:[LoginArtistasService, ArtistaGuard,AdminGuard,EmpresaGuard],
   entryComponents: [LoginComponent,SigninComponent,EmpresasComponent,PostEmpresasComponent, ModalComponent],
   bootstrap: [AppComponent]
 })

@@ -5,7 +5,7 @@ import {CompaniesServicesService} from '../services/companies-services.service';
 import { Location, } from '@angular/common';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
-import { LoginArtistasService } from '../services/login-artistas.service';
+import { LoginEmpresasService } from '../services/login-empresas.service';
 
 
 @Component({
@@ -26,7 +26,7 @@ export class LoginEmpresasComponent implements OnInit {
 
 
   constructor(private service: CompaniesServicesService,
-    private location: Location, private firestore: AngularFirestore,private router: Router, private authSvc: LoginArtistasService) {
+    private location: Location, private firestore: AngularFirestore,private router: Router, private authSvc: LoginEmpresasService) {
 
   }
 

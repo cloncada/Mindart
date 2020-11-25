@@ -7,8 +7,8 @@ import { User } from '../shared/models/user.interface';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import {RoleValidator} from '../auth/helpers/roleValidator'
 
-@Injectable({ providedIn: 'root'})
-export class LoginArtistasService  extends RoleValidator{
+@Injectable({providedIn: 'root'})
+export class LoginEmpresasService extends RoleValidator {
   public user$: Observable<User>;
   public user:User;
 
@@ -67,8 +67,9 @@ export class LoginArtistasService  extends RoleValidator{
       const data:User = {
         uid: user.uid,
         email: user.email,
-        role: 'ARTISTA',
+        role: 'EMPRESA',
       };
       return userRef.set(data ,{merge: true});
   }
+
 }
