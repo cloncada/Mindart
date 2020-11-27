@@ -19,7 +19,6 @@ export class ListArtistService {
     email: '',
     name: '',
     dob: '',
-    password: '',
     number:'',
 
   };

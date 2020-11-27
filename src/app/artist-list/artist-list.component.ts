@@ -13,7 +13,7 @@ import { Location } from '@angular/common';
 })
 
 export class ArtistListComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'dob', 'number','email', 'password', 'actions'];
+  displayedColumns: string[] = ['name', 'dob', 'number','email', 'actions'];
   dataSource = new MatTableDataSource();
 
 

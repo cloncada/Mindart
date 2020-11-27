@@ -11,9 +11,7 @@
   <mat-form-field>
     <input matInput placeholder="numero" name= 'numero'[(ngModel)]="this.companyService.selected.number">
   </mat-form-field>
-  <mat-form-field>
-    <input matInput placeholder="password" name= 'password'[(ngModel)]="this.companyService.selected.password">
-  </mat-form-field>
+
   <button mat-flat-button color= "primary" (click)="onSaveForm()" >
     <mat-icon>save</mat-icon> Guardar
   </button>
