@@ -32,11 +32,11 @@ const routes: Routes = [
 {path :"login-admin", component:LoginAdminComponent},
 {path :"perfil-artistas", component:PerfilArtistasComponent,canActivate:[ArtistaGuard]},
 {path :"perfil-empresas", component:PerfilEmpresasComponent,canActivate:[EmpresaGuard]},
-{path :"inicio-admin", component:ArtistListComponent,canActivate:[AdminGuard]},
+{path :"inicio-admin", component:ArtistListComponent},
 {path :"inicio-artistas", component:InicioArtistasComponent,canActivate:[ArtistaGuard]},
 {path :"inicio-empresas", component:InicioEmpresasComponent,canActivate:[EmpresaGuard]},
 {path :"admin-empresas", component:CompanyListComponent,canActivate:[AdminGuard]},
-{path :"editar-artista", component:EditarArtistaComponent},
+{path :"editar-artista", component:EditarArtistaComponent, canActivate:[ArtistaGuard,EmpresaGuard]},
 {path :"postemp/:id", component: PostempComponent,canActivate:[EmpresaGuard]},
 {path :"postartista/:id", component: PostartistaComponent, canActivate:[ArtistaGuard]},
 ];
