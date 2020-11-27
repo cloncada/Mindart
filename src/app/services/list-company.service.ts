@@ -19,7 +19,7 @@ export class ListCompanyService {
     name: '',
     nit: '',
     number: '',
-    password:'',
+    
 
   };
 

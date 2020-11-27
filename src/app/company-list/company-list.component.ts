@@ -9,7 +9,7 @@ import {CompanyI} from '../ ../../models/companies.interface';
   styleUrls: ['./company-list.component.css']
 })
 export class CompanyListComponent implements OnInit {
-  displayedColumns: string[] = ['email', 'name', 'nit','number', 'password', 'actions'];
+  displayedColumns: string[] = ['email', 'name', 'nit','number', 'actions'];
   dataSource = new MatTableDataSource();
 
 

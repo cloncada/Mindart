@@ -35,8 +35,8 @@ const routes: Routes = [
 {path :"inicio-admin", component:ArtistListComponent},
 {path :"inicio-artistas", component:InicioArtistasComponent,canActivate:[ArtistaGuard]},
 {path :"inicio-empresas", component:InicioEmpresasComponent,canActivate:[EmpresaGuard]},
-{path :"admin-empresas", component:CompanyListComponent,canActivate:[AdminGuard]},
-{path :"editar-artista", component:EditarArtistaComponent, canActivate:[ArtistaGuard,EmpresaGuard]},
+{path :"admin-empresas", component:CompanyListComponent},
+{path :"editar-artista", component:EditarArtistaComponent},
 {path :"postemp/:id", component: PostempComponent,canActivate:[EmpresaGuard]},
 {path :"postartista/:id", component: PostartistaComponent, canActivate:[ArtistaGuard]},
 ];

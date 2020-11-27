@@ -4,6 +4,6 @@ export interface ArtistI {
   dob:string;
   number:string;
   email: string;
-  password:string;
+ 
 
 }

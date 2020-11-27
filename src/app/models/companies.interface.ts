@@ -4,6 +4,6 @@ export interface CompanyI {
   name:string;
   nit:string;
   number:string;
-  password:string;
+
 
 }
